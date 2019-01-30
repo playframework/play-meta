@@ -1,4 +1,4 @@
-# Play/Lagom Meta
+# Play Meta
 
 This repository is dedicated to team management, high-level feature discussions and for persisting design decisions.
 
