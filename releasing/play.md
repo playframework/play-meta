@@ -1,3 +1,11 @@
+## Before the release
+
+Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one. For example:
+
+1. [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
+1. [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
+1. Akka Team
+
 ## Track your release
 
 Create a [new Play release issue][].
