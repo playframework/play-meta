@@ -1,6 +1,6 @@
 # Releasing Lagom
 
-* [Track your release](#track-your-release)
+* [Release tracking issue](#release-tracking-issue)
 * [First-time Setup](#first-time-setup)
 * [Review the Changes](#review-the-changes)
 * [Before You Release](#before-you-release)
@@ -10,11 +10,11 @@
 * [Announce the Release](#announce-the-release)
 * [After-Release Cleanup](#after-release-cleanup)
 
-## Track your release
+## Release tracking issue
 
-Create a [new Lagom release issue][].
+Create a new [release tracking issue][].
 
-[new Lagom release issue]: https://github.com/lightbend/play-lagom-team/issues/new?labels=release&template=lagom-release.md&title=Release+Lagom+x.y.z
+[release tracking issue]: https://github.com/lightbend/play-meta/issues/new?template=z_lagom-release.md
 
 ## First-time Setup
 
@@ -57,11 +57,11 @@ If there’s been changes in the build or bumped versions of sbt plugins, you ma
 
 ## Before You Release
 
-* Email Marketing to let them know about the planned
-  release date.
+* Email Marketing to let them know about the planned release date.
     * Let them know whether it's a major, minor or patch release
     * For a patch release, a day or two of notice is sufficient
-    * Minor releases will need at least a week or two of notice... we should keep them apprised of the release candidate process
+    * Minor releases will need at least a week or two of notice... we should keep them apprised of the release
+      candidate process
     * Major releases will need more notice
 * Check the appropriate [GitHub issues milestone](https://github.com/lagom/lagom/milestones) to be sure that
   there aren't any unresolved issues scheduled for the release, and close the milestone if it's complete
@@ -116,7 +116,8 @@ Verify the release:
 Merge your release pull request and deploy the updated website from `vegemite`. Check the
 `~/bin/nightlies` script for the command to run.
 
-*NOTE*: the command logs its output to `~/logs/lagom-nightly-deploy-master-1532020306.log` or similar. You need to find the most recent file to `tail` if you can to see what is happening.
+*NOTE*: the command logs its output to `~/logs/lagom-nightly-deploy-master-1532020306.log` or similar. You need
+to find the most recent file to `tail` if you can to see what is happening.
 
 ## Update the g8 templates and example projects
 
@@ -138,7 +139,7 @@ Merge your release pull request and deploy the updated website from `vegemite`. 
 
 Send a link to the release blog post around internally...
 
-* Slack #applied-play and share the post into #general
+* Slack #applied-play and share the post into #eng
 * Email eng-updates
 
 ...and publicly

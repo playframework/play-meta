@@ -1,3 +1,12 @@
+# Releasing Play
+
+* [Before the release](#before-the-release)
+* [Release tracking issue](#release-tracking-issue)
+* [Intro](#intro)
+* [Prerequisites](#prerequisites)
+* [If something goes wrong](#if-something-goes-wrong)
+* [Releasing Play](#releasing-play)
+
 ## Before the release
 
 Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one. For example:
@@ -6,13 +15,13 @@ Make sure that other teams inside Lightbend are aware of the upcoming release, e
 1. [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
 1. Akka Team
 
-## Track your release
+## Release tracking issue
 
-Create a [new Play release issue][].
+Create a new [release tracking issue][].
 
-[new Play release issue]: https://github.com/lightbend/play-lagom-team/issues/new?labels=release&template=play-release.md&title=Release+Play+x.y.z
+[release tracking issue]: https://github.com/lightbend/play-meta/issues/new?template=z_play-release.md
 
-# Play 2.4.x and onwards
+## Intro
 
 Play 2.4 introduced a much more modular setup for the Play modules and documentation, where modules now span
 multiple projects.  Each project needs to be released individually, and does not necessarily need to be
@@ -35,7 +44,9 @@ should be performed by ssh-ing into `vegemite`, starting a `screen` session, the
 starting a `screen` session, you ensure that your internet connection does not impact the release.
 
 For tagging some releases (e.g. play-ws) you may need to enter your Github username and password. If you have
-2FA enabled for Github (which you should have!) then you may need to generate a [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
+2FA enabled for Github (which you should have!) then you may need to generate a [personal access token][]..
+
+[personal access token]: https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/
 
 ## If something goes wrong
 
@@ -305,14 +316,14 @@ So that everything is up to date.
 request will kick off a build and you'll be notified of what passes and what fails.
 
 There is an integration through webhook to example-code-service: see
-https://github.com/typesafehub/example-code-service/ for what is on their end for packaging ./sbt in a zip file.
+https://github.com/lightbend/example-code-service/ for what is on their end for packaging ./sbt in a zip file.
 
 ### Step 5 - Update Example Code Service
 
 The Example Code Service will need to be updated to point to the new versions.  All the play templates are in
 play-templates.conf:
 
-https://github.com/typesafehub/example-code-service/blob/master/example-code-service/conf/play-templates.conf
+https://github.com/lightbend/example-code-service/blob/master/example-code-service/conf/play-templates.conf
 
 You will need to have unique names for each template, so rename the current templates so it follows the
 templates with the version explicitly appended (see bold bits):
