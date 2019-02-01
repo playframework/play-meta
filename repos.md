@@ -38,6 +38,7 @@
 * [lagom-java-maven-chirper-example](https://github.com/lagom/lagom-java-maven-chirper-example) / [lagom-java-sbt-chirper-example](https://github.com/lagom/lagom-java-sbt-chirper-example)
 * [lagom-java-grpc-example](https://github.com/lagom/lagom-java-grpc-example) / [lagom-scala-grpc-example](https://github.com/lagom/lagom-scala-grpc-example)
 * [online-auction-java](https://github.com/lagom/online-auction-java) / [online-auction-scala](https://github.com/lagom/online-auction-scala)
+* [shopping-cart-scala](https://github.com/lagom/shopping-cart-scala)
 
 ### Lagom Recipes
 
