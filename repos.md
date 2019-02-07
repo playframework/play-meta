@@ -13,9 +13,9 @@
 * [netty-reactive-streams](https://github.com/playframework/netty-reactive-streams)
 * [twirl](https://github.com/playframework/twirl)
 * [scalatestplus-play](https://github.com/playframework/scalatestplus-play)
-* Play sample apps & seeds, see [templates.conf][] in templatecontrol
+* Play sample apps & seeds, see [model/Play.scala][] in templatecontrol
 
-[templates.conf]: https://github.com/lightbend/templatecontrol/blob/master/src/main/resources/templates.conf
+[model/Play.scala]: https://github.com/lightbend/templatecontrol/blob/master/src/main/scala/templatecontrol/model/Play.scala
 
 ### Play Tutorials
 
