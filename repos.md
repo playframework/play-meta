@@ -87,12 +87,15 @@ The repositories here are not maintained by Play Team. The list is merely inform
 - [lagom/lagom.github.io](https://github.com/lagom/lagom.github.io)
 - [lagom/lagom-akka-discovery-service-locator](https://github.com/lagom/lagom-akka-discovery-service-locator)
 
+### Seeds
+
+- [lagom/lagom-scala.g8](https://github.com/lagom/lagom-scala.g8)
+- [lagom/lagom-java.g8](https://github.com/lagom/lagom-java.g8)
+
 ### Samples
 
 - [lagom/online-auction-java](https://github.com/lagom/online-auction-java)
 - [lagom/online-auction-scala](https://github.com/lagom/online-auction-scala)
-- [lagom/lagom-scala.g8](https://github.com/lagom/lagom-scala.g8)
-- [lagom/lagom-java.g8](https://github.com/lagom/lagom-java.g8)
 - [lagom/lagom-java-chirper-example](https://github.com/lagom/lagom-java-chirper-example)
 - [lagom/lagom-recipes](https://github.com/lagom/lagom-recipes)
 - [lagom/lagom-scala-grpc-example](https://github.com/lagom/lagom-scala-grpc-example)
