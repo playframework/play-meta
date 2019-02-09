@@ -1,59 +1,121 @@
 # Repositories
 
-## [Play](https://github.com/playframework) (Maintainers)
+These repositories are maintained by the Play Team.
 
-### Play Primary Repositories
+## Play org repositories
 
-* [playframework](https://github.com/playframework/playframework)
-* [interplay](https://github.com/playframework/interplay)
-* [play-file-watch](https://github.com/playframework/play-file-watch)
-* [play-json](https://github.com/playframework/play-json)
-* [cachecontrol](https://github.com/playframework/cachecontrol)
-* [play-ws](https://github.com/playframework/play-ws)
-* [netty-reactive-streams](https://github.com/playframework/netty-reactive-streams)
-* [twirl](https://github.com/playframework/twirl)
-* [scalatestplus-play](https://github.com/playframework/scalatestplus-play)
-* Play sample apps & seeds, see [model/Play.scala][] in templatecontrol
+- [playframework/playframework](https://github.com/playframework/playframework)
+- [playframework/play-slick](https://github.com/playframework/play-slick)
+- [playframework/play-doc](https://github.com/playframework/play-doc)
+- [playframework/twirl](https://github.com/playframework/twirl)
+- [playframework/play-generated-docs](https://github.com/playframework/play-generated-docs)
+- [playframework/scalatestplus-play](https://github.com/playframework/scalatestplus-play)
+- [playframework/omnidoc](https://github.com/playframework/omnidoc)
+- [playframework/playframework.com](https://github.com/playframework/playframework.com)
+- [playframework/interplay](https://github.com/playframework/interplay)
+- [playframework/cachecontrol](https://github.com/playframework/cachecontrol)
+- [playframework/play-file-watch](https://github.com/playframework/play-file-watch)
+- [playframework/play-json](https://github.com/playframework/play-json)
+- [playframework/play-ws](https://github.com/playframework/play-ws)
 
-[model/Play.scala]: https://github.com/lightbend/templatecontrol/blob/master/src/main/scala/templatecontrol/model/Play.scala
+### Seeds
 
-### Play Tutorials
+- [playframework/play-scala-seed.g8](https://github.com/playframework/play-scala-seed.g8)
+- [playframework/play-java-seed.g8](https://github.com/playframework/play-java-seed.g8)
 
-* [play-java-hello-world-tutorial](https://github.com/playframework/play-java-hello-world-tutorial) / [play-scala-hello-world-tutorial](https://github.com/playframework/play-scala-hello-world-tutorial)
+### Samples
 
-## [Lagom](https://github.com/lagom) (Maintainers)
+- [playframework/play-scala-websocket-example](https://github.com/playframework/play-scala-websocket-example)
+- [playframework/play-java-websocket-example](https://github.com/playframework/play-java-websocket-example)
+- [playframework/play-scala-tls-example](https://github.com/playframework/play-scala-tls-example)
+- [playframework/play-scala-anorm-example](https://github.com/playframework/play-scala-anorm-example)
+- [playframework/play-java-ebean-example](https://github.com/playframework/play-java-ebean-example)
+- [playframework/play-scala-macwire-di-example](https://github.com/playframework/play-scala-macwire-di-example)
+- [playframework/play-scala-isolated-slick-example](https://github.com/playframework/play-scala-isolated-slick-example)
+- [playframework/play-scala-streaming-example](https://github.com/playframework/play-scala-streaming-example)
+- [playframework/play-scala-secure-session-example](https://github.com/playframework/play-scala-secure-session-example)
+- [playframework/play-scala-log4j2-example](https://github.com/playframework/play-scala-log4j2-example)
+- [playframework/play-scala-compile-di-example](https://github.com/playframework/play-scala-compile-di-example)
+- [playframework/play-java-streaming-example](https://github.com/playframework/play-java-streaming-example)
+- [playframework/play-scala-fileupload-example](https://github.com/playframework/play-scala-fileupload-example)
+- [playframework/play-java-fileupload-example](https://github.com/playframework/play-java-fileupload-example)
+- [playframework/play-scala-rest-api-example](https://github.com/playframework/play-scala-rest-api-example)
+- [playframework/play-scala-starter-example](https://github.com/playframework/play-scala-starter-example)
+- [playframework/play-java-starter-example](https://github.com/playframework/play-java-starter-example)
+- [playframework/play-java-jpa-example](https://github.com/playframework/play-java-jpa-example)
+- [playframework/play-scala-slick-example](https://github.com/playframework/play-scala-slick-example)
+- [playframework/play-scala-chatroom-example](https://github.com/playframework/play-scala-chatroom-example)
+- [playframework/play-java-chatroom-example](https://github.com/playframework/play-java-chatroom-example)
+- [playframework/play-java-compile-di-example](https://github.com/playframework/play-java-compile-di-example)
+- [playframework/play-java-dagger2-example](https://github.com/playframework/play-java-dagger2-example)
+- [playframework/play-java-rest-api-example](https://github.com/playframework/play-java-rest-api-example)
+- [playframework/play-scala-forms-example](https://github.com/playframework/play-scala-forms-example)
+- [playframework/play-java-forms-example](https://github.com/playframework/play-java-forms-example)
+- [playframework/play-webgoat](https://github.com/playframework/play-webgoat)
+- [playframework/play-java-hello-world-tutorial](https://github.com/playframework/play-java-hello-world-tutorial)
+- [playframework/play-java-grpc-example](https://github.com/playframework/play-java-grpc-example)
+- [playframework/play-scala-grpc-example](https://github.com/playframework/play-scala-grpc-example)
+- [playframework/play-scala-hello-world-tutorial](https://github.com/playframework/play-scala-hello-world-tutorial)
 
-### Lagom Primary Repositories
+If in doubt about maintained samples, see [templatecontrol list](https://github.com/lightbend/templatecontrol/blob/master/src/main/scala/templatecontrol/model/Play.scala).
 
-* [lagom](https://github.com/lagom/lagom)
-* [service-locator-akka-discovery](https://github.com/lagom/service-locator-akka-discovery)
+### Incubating
 
-### Lagom Templates/Archetypes
+- [playframework/play-socket.io](https://github.com/playframework/play-socket.io)
+- [playframework/play-grpc](https://github.com/playframework/play-grpc)
 
-* [lagom-java-maven](https://github.com/lagom/lagom/tree/master/dev/archetypes/maven-java/)
-* [lagom-java.g8](https://github.com/lagom/lagom-java.g8) / [lagom-scala.g8](https://github.com/lagom/lagom-scala.g8)
+### Community Driven
 
-### Lagom Examples
+These repositories are _not_ maintained by the Play Team.  The list is merely informative.
 
-* [lagom-java-maven-chirper-example](https://github.com/lagom/lagom-java-maven-chirper-example) / [lagom-java-sbt-chirper-example](https://github.com/lagom/lagom-java-sbt-chirper-example)
-* [lagom-java-grpc-example](https://github.com/lagom/lagom-java-grpc-example) / [lagom-scala-grpc-example](https://github.com/lagom/lagom-scala-grpc-example)
-* [online-auction-java](https://github.com/lagom/online-auction-java) / [online-auction-scala](https://github.com/lagom/online-auction-scala)
-* [shopping-cart-scala](https://github.com/lagom/shopping-cart-scala)
+- [playframework/jnotify](https://github.com/playframework/jnotify)
+- [playframework/play-enhancer](https://github.com/playframework/play-enhancer)
+- [playframework/play-mailer](https://github.com/playframework/play-mailer)
+- [playframework/play-ebean](https://github.com/playframework/play-ebean)
+- [playframework/anorm](https://github.com/playframework/anorm)
+- [playframework/play-soap](https://github.com/playframework/play-soap)
+- [playframework/netty-reactive-streams](https://github.com/playframework/netty-reactive-streams)
+- [playframework/play-iteratees](https://github.com/playframework/play-iteratees)
+- [playframework/play-native-loader](https://github.com/playframework/play-native-loader)
+- [playframework/play-spring-loader](https://github.com/playframework/play-spring-loader)
 
-### Lagom Recipes
+-------
 
-See [lagom-recipes](https://github.com/lagom/lagom-recipes).
+## Lagom Repositories
 
-## Other Repositories (Maintainers)
+- [lagom/lagom](https://github.com/lagom/lagom)
+- [lagom/lagom.github.io](https://github.com/lagom/lagom.github.io)
+- [lagom/lagom-akka-discovery-service-locator](https://github.com/lagom/lagom-akka-discovery-service-locator)
 
-* [play-lagom-team](https://github.com/lightbend/play-lagom-team)
+### Seeds
+
+- [lagom/lagom-scala.g8](https://github.com/lagom/lagom-scala.g8)
+- [lagom/lagom-java.g8](https://github.com/lagom/lagom-java.g8)
+
+### Samples
+
+- [lagom/online-auction-java](https://github.com/lagom/online-auction-java)
+- [lagom/online-auction-scala](https://github.com/lagom/online-auction-scala)
+- [lagom/lagom-java-chirper-example](https://github.com/lagom/lagom-java-chirper-example)
+- [lagom/lagom-recipes](https://github.com/lagom/lagom-recipes)
+- [lagom/lagom-scala-grpc-example](https://github.com/lagom/lagom-scala-grpc-example)
+- [lagom/lagom-java-grpc-example](https://github.com/lagom/lagom-java-grpc-example)
+- [lagom/lagom-java-sbt-chirper-example](https://github.com/lagom/lagom-java-sbt-chirper-example)
+- [lagom/lagom-java-maven-chirper-example](https://github.com/lagom/lagom-java-maven-chirper-example)
+- [lagom/lagom-scala-minimal-deployment-example](https://github.com/lagom/lagom-scala-minimal-deployment-example)
+- [lagom/shopping-cart-scala](https://github.com/lagom/shopping-cart-scala)
+- [lagom/ibm-integration-examples](https://github.com/lagom/ibm-integration-examples)
+
+------
+
+## Other Repositories
+
+* [play-meta](https://github.com/lightbend/play-meta)
+* [play-team](https://github.com/lightbend/play-team)
 * [vegemite](https://github.com/lightbend/vegemite)
 
-## Repositories (Co-maintainers)
+## Co-maintained repositories
 
 * [ssl-config](https://github.com/lightbend/ssl-config)
 * [akka-grpc](https://github.com/akka/akka-grpc)
-
-## Repositories (Contributors)
-
 * [akka-management](https://github.com/akka/akka-management)
