@@ -1,6 +1,6 @@
 # Repositories
 
-This is the list of repositories maintained by Play Team.
+These repositories are maintained by the Play Team.
 
 ## Play org repositories
 
@@ -66,7 +66,7 @@ If in doubt about maintained samples, see [templatecontrol list](https://github.
 
 ### Community Driven
 
-The repositories here are not maintained by Play Team. The list is merely informative.
+These repositories are _not_ maintained by the Play Team.  The list is merely informative.
 
 - [playframework/jnotify](https://github.com/playframework/jnotify)
 - [playframework/play-enhancer](https://github.com/playframework/play-enhancer)
@@ -110,7 +110,8 @@ The repositories here are not maintained by Play Team. The list is merely inform
 
 ## Other Repositories
 
-* [play-team](https://github.com/lightbend/play-lagom-team)
+* [play-meta](https://github.com/lightbend/play-meta)
+* [play-team](https://github.com/lightbend/play-team)
 * [vegemite](https://github.com/lightbend/vegemite)
 
 ## Co-maintained repositories
