@@ -1,0 +1,2 @@
+# Hide Cargo.lock diffs (by default)
+Cargo.lock -diff
