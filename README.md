@@ -4,8 +4,6 @@ This repository is for team management and to track cross-repository efforts in 
 
 ## Team Status / Activity
 
-* [Waffle Board][] [![Waffle badge]][]
-* [Sprint Plan][]
 * [Repositories](repos.md)
 
 ## Release Procedures
