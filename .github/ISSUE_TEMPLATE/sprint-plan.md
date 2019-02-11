@@ -1,18 +1,20 @@
 ---
 name: "📅 Sprint Plan"
-about: Bootstraps the sprint plan
-title: 2019-xx-xx Mon meeting
+about: Bootstraps a sprint plan
 title: Play Sprint Plan 2019-xx-xx
 labels: sprint-plan
 assignees: ''
 
 ---
+
+[Previous sprint plans](https://github.com/lightbend/play-team/issues?q=label:sprint-plan+sort:created-desc)
+
 ## Dates
 
 - Start: 2019-xx-xx
 - End: 2019-xx-xx
 
-## Absents
+## Absences
 
 - @marcospereira
 - @renatocaval
@@ -21,4 +23,6 @@ assignees: ''
 
 ## Objectives/Tasks
 
+- [ ]
+- [ ]
 - [ ]
