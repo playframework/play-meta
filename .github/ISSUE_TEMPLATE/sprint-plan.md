@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-[Previous sprint plans](https://github.com/lightbend/play-team/issues?q=label:sprint-plan+sort:created-desc)
+[Previous sprint plans](https://github.com/lightbend/play-meta/issues?q=label:sprint-plan+sort:created-desc)
 
 ## Dates
 
