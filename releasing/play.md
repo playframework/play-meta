@@ -200,93 +200,32 @@ https://www.playframework.com/documentation/2.6.15/Home.
 ### Step 4 - update playframework templates and seeds
 
 The "core" playframework templates describe Play's overall feature set -- they are maintained by the Play team
-and in the github.com/playframework repository.  Historically, there were issues with out of date Activator
-templates, and confusion between what was supported and current, and what was third party and out of date.
+and in the <https://github.com/playframework/> GitHub organisation.  Historically, there were issues with out of date Activator
+templates, and confusion between what was supported and current, and what was third-party and out of date.
 
-The sample templates are run through https://github.com/playframework/templatecontrol -- this contains a list of
-the example projects and seeds.  Using Template Control
+The sample templates are run through <https://github.com/playframework/templatecontrol> -- this contains a list of
+the example projects and seeds.
 
-Running templatecontrol will look for version numbers and automatically create a pull request with any needed
-upgrades.  It's safe to run, but you will need local forks of all the template projects.
-
-So here's how to check out all of the projects and fork them to your own local github: this assumes you have
-https://hub.github.com/ installed. An Ubuntu/Debian PPA is here:
-https://launchpad.net/~cpick/+archive/ubuntu/hub.
-
-```bash
-#!/bin/bash
-
-declare -a templates=( \
-   "play-java-chatroom-example" \
-   "play-java-compile-di-example" \
-   "play-java-dagger2-example" \
-   "play-java-ebean-example" \
-   "play-java-fileupload-example" \
-   "play-java-forms-example" \
-   "play-java-jpa-example" \
-   "play-java-rest-api-example" \
-   "play-java-seed.g8" \
-   "play-java-starter-example" \
-   "play-java-streaming-example" \
-   "play-java-websocket-example" \
-   "play-scala-anorm-example" \
-   "play-scala-chatroom-example" \
-   "play-scala-compile-di-example" \
-   "play-scala-fileupload-example" \
-   "play-scala-forms-example" \
-   "play-scala-isolated-slick-example" \
-   "play-scala-log4j2-example" \
-   "play-scala-macwire-di-example" \
-   "play-scala-rest-api-example" \
-   "play-scala-secure-session-example" \
-   "play-scala-seed.g8" \
-   "play-scala-slick-example" \
-   "play-scala-starter-example" \
-   "play-scala-streaming-example" \
-   "play-scala-tls-example" \
-   "play-scala-websocket-example" \
-)
-
-for f in "${templates[@]}"; do
-  git clone git@github.com:playframework/$f.git
-  (cd $f; hub fork)
-done
-```
-
-Run the script to create the templates inside the "templates" directory within the templatecontrol folder.
-
-```
-git clone https://github.com/playframework/templatecontrol.git
-cd templatecontrol
-```
-
-Note  that you will need to set up a personal access token for github:
-
-```
-export TCONTROL_GITHUB_REMOTE=wsargent
-export TCONTROL_GITHUB_USER=wsargent
-export TCONTROL_GITHUB_OAUTH=<personal access token>
-```
-
-See https://github.com/playframework/templatecontrol#prerequisites for more details.
-
-You will need to update templatecontrol's application.conf (or <play-branch-name>.conf) file with the new Play
-version. Configuration files are in the src/main/resources directory:
-https://github.com/lightbend/templatecontrol/blob/master/src/main/resources/
+Running TemplateControl will look for version numbers and automatically create a pull request with any needed
+upgrades.  It's safe to run, but you will need local forks of all the template projects: see
+<https://github.com/lightbend/templatecontrol/blob/master/scripts/README.md>.
 
 Create a PR from the version you want so that your changes are captured. For example:
 
 ```
 git checkout -b upgrade-2.5.13
-vi src/main/resources/<play-branch-name>.conf
+vim src/main/resources/<play-branch-name>.conf
 ```
 
 After updating the .conf files, commit and push your changes, submit a new pull request to templatecontrol
 project, merge it and then run templatecontrol:
 
+Note the prerequisites detailed in <https://github.com/playframework/templatecontrol#prerequisites>.
+
 ```
 sbt run
 ```
+
 
 **Verification**: Check out a local copy of play-scala-starter-example and play-java-starter-example locally and
 smoke test them locally:
