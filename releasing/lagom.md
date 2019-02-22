@@ -14,14 +14,14 @@
 
 Create a new [release tracking issue][].
 
-[release tracking issue]: https://github.com/lightbend/play-meta/issues/new?template=z_lagom-release.md
+[release tracking issue]: https://github.com/playframework/play-meta/issues/new?template=z_lagom-release.md
 
 ## First-time Setup
 
  * Get access to vegemite
  * Read the [vegemite docs][]
 
-[vegemite docs]: https://github.com/typesafehub/vegemite/blob/master/README.md
+[vegemite docs]: https://github.com/lightbend/vegemite/blob/master/README.md
 
 ## Review the Changes
 
@@ -129,8 +129,8 @@ to find the most recent file to `tail` if you can to see what is happening.
 * https://github.com/lagom/online-auction-java/blob/master/project/plugins.sbt
 * https://github.com/lagom/online-auction-scala/blob/master/project/plugins.sbt
 * Reactive Platform "supported modules" page (sbt plugin & artifacts):
-    * https://github.com/typesafehub/reactive-platform-docs/blob/master/build.sbt#L73
-    * https://github.com/typesafehub/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md
+    * https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L73
+    * https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md
 * We also have examples in https://github.com/lagom/ibm-integration-examples and
   https://github.com/lagom/lagom-recipes. We will not try to update these on every release, but may choose to do
   so on a case-by-case basis for more significant releases.

@@ -19,7 +19,7 @@ Make sure that other teams inside Lightbend are aware of the upcoming release, e
 
 Create a new [release tracking issue][].
 
-[release tracking issue]: https://github.com/lightbend/play-meta/issues/new?template=z_play-release.md
+[release tracking issue]: https://github.com/playframework/play-meta/issues/new?template=z_play-release.md
 
 ## Intro
 

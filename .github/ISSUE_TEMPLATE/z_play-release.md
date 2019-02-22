@@ -16,7 +16,7 @@ Better to do this in advance:
   - [ ] [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
   - [ ] Akka Team
 
-## Do the Release ([Full document](https://github.com/lightbend/play-meta/blob/master/releasing/play.md))
+## Do the Release ([Full document](https://github.com/playframework/play-meta/blob/master/releasing/play.md))
 
 - [ ] [Release projects that Play depends on][]
   - [ ] release [play-json][]
@@ -43,14 +43,14 @@ Better to do this in advance:
   - [ ] Send an internal email to eng-updates
   - [ ] Tweet about the new release.
 
-[Release projects that Play depends on]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
-[Release Play itself]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-1---release-play-itself
-[Release external modules]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-2---release-external-modules-play-slick-play-ebean-scalatestplus-play
-[Release omnidoc]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-3---release-omnidoc
-[Update playframework templates and seeds]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-4---update-playframework-templates-and-seeds
-[Update Example Code Service]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-5---update-example-code-service
-[Update playframework.com]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-6---update-playframeworkcom
-[Announce]: https://github.com/lightbend/play-meta/blob/master/releasing/play.md#step-7---announce
+[Release projects that Play depends on]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
+[Release Play itself]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-1---release-play-itself
+[Release external modules]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-2---release-external-modules-play-slick-play-ebean-scalatestplus-play
+[Release omnidoc]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-3---release-omnidoc
+[Update playframework templates and seeds]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-4---update-playframework-templates-and-seeds
+[Update Example Code Service]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-5---update-example-code-service
+[Update playframework.com]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-6---update-playframeworkcom
+[Announce]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-7---announce
 
 [play-ebean]: https://github.com/playframework/play-ebean
 [play-json]: https://github.com/playframework/play-json

@@ -110,7 +110,7 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 
 ## Other Repositories
 
-* [play-meta](https://github.com/lightbend/play-meta)
+* [play-meta](https://github.com/playframework/play-meta)
 * [play-team](https://github.com/lightbend/play-team)
 * [vegemite](https://github.com/lightbend/vegemite)
 
