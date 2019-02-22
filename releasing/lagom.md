@@ -35,12 +35,12 @@ commits starting from a given tag and up to head or between to tags.
 
 This prints a list of changes reformatted to turn issue references into Markdown-formatted links to GitHub. This
 makes it convenient to copy and paste when writing a changelog.  Note that `changelog.sh` will not print a valid
-list if you are working on an `M1` release. You’ll have to manually diff changes listed in `master` and `1.4.x`,
+list if you are working on an `M1` release. You'll have to manually diff changes listed in `master` and `1.4.x`,
 or most recent stable branch, but you can use changelog to create the lists to diff from.
 
     bin/authors.pl 1.3.7..1.3.8   # print change log starting from tag 1.3.7 up to 1.3.8
 
-This prints the authors (without headers on the columns). You’ll need this on the release notes. The
+This prints the authors (without headers on the columns). You'll need this on the release notes. The
 `authors.pl` is useless in M1 releases.
 
 Some lines may be missing GitHub issue references. You'll need to decide for each one whether to find an issue
@@ -48,11 +48,11 @@ to link it to in the changelog, include it in the changelog without an issue lin
 entirely. Merge commits and automated commits that only change the version number should always be left out.
 
 *Bonus points*: once you have a clean list of issues with the appropriate link to GitHub and issue number, use
-sort -r to have the list sorted in reverse numerical order so it’s easier to locate a particular issue.
+sort -r to have the list sorted in reverse numerical order so it's easier to locate a particular issue.
 
 ### Manual verifications (optional)
 
-If there’s been changes in the build or bumped versions of sbt plugins, you may want to have a look at
+If there's been changes in the build or bumped versions of sbt plugins, you may want to have a look at
 [https://github.com/lagom/lagom/issues/1496#issuecomment-408398508](https://github.com/lagom/lagom/issues/1496#issuecomment-408398508)
 
 ## Before You Release
@@ -155,4 +155,4 @@ Send a link to the release blog post around internally...
 * If there is a new release branch, update the nightlies script on `vegemite` to ensure the documentation is deployed
     * The GitHub repository is the source of truth, so change it in a GitHub pull request first
     * After it is merged, ssh to `vegemite` and git pull the latest version
-    * It’s a good idea to test running the command manually rather than waiting for the next nightly run
+    * It's a good idea to test running the command manually rather than waiting for the next nightly run

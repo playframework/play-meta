@@ -33,8 +33,8 @@ decisions:
   answer is yes.
 
 * Does this release of Play require updating the activator templates?  If it is the latest stable release that
-  you are releasing, then yes.  Specifically, if the current stable release is 2.3.8, and you’re releasing
-  2.3.9, then you need to publish the templates, but if you’re releasing 2.2.7, then you must not publish the
+  you are releasing, then yes.  Specifically, if the current stable release is 2.3.8, and you're releasing
+  2.3.9, then you need to publish the templates, but if you're releasing 2.2.7, then you must not publish the
   templates, since doing so will revert the Play seed templates back to 2.2 when they should be on 2.3.
 
 ## Prerequisites
@@ -50,7 +50,7 @@ For tagging some releases (e.g. play-ws) you may need to enter your Github usern
 
 ## If something goes wrong
 
-The release process pushes all artifacts to maven central **and** bintray, but doesn’t “promote” them until all
+The release process pushes all artifacts to maven central **and** bintray, but doesn't "promote" them until all
 publishing is complete and successful.
 
 If the build failed during or after the promotion of either bintray or maven central artifacts, there is no
@@ -120,7 +120,7 @@ will be broken until you release Omnidoc few steps down this document.
 ### Step 2 - release external modules (play-slick, play-ebean, scalatestplus-play)
 
 This includes modules like play-slick, play-grpc and scalatestplus-play.  Only release these if they need to be
-released, generally for minor Play releases, there’s no reason to cut a new release of these, these libraries
+released, generally for minor Play releases, there's no reason to cut a new release of these, these libraries
 are free to have their own release cycle.
 
 **Note**: since we update omnidoc and the Play templates and seeds people reading the docs or starting a new
@@ -157,14 +157,14 @@ with the new version of Play.
 ### Step 3 - release omnidoc
 
 **Warning**: this is a compulsory step and the version vX.Y.Z of omnidoc released here must match the version
-vX.Y.Z of Play released in step 1 above. There’s a circular dependency.
+vX.Y.Z of Play released in step 1 above. There's a circular dependency.
 
-Omnidoc builds Play’s documentation from all the current versions of Play and its modules.  The first step you
+Omnidoc builds Play's documentation from all the current versions of Play and its modules.  The first step you
 need to take is to update the versions in the omnidoc build file for the branch of Play that you are releasing.
 Update the Play version to the version of Play that you just released, and also update any external modules to
 their latest version that is compatible with that version of Play.
 
-Here’s an example update to the omnidoc 2.4.x branch.
+Here's an example update to the omnidoc 2.4.x branch.
 
 ```diff
 $ git diff
@@ -199,7 +199,7 @@ https://www.playframework.com/documentation/2.6.15/Home.
 
 ### Step 4 - update playframework templates and seeds
 
-The “core” playframework templates describe Play’s overall feature set -- they are maintained by the Play team
+The "core" playframework templates describe Play's overall feature set -- they are maintained by the Play team
 and in the github.com/playframework repository.  Historically, there were issues with out of date Activator
 templates, and confusion between what was supported and current, and what was third party and out of date.
 
@@ -253,7 +253,7 @@ for f in "${templates[@]}"; do
 done
 ```
 
-Run the script to create the templates inside the “templates” directory within the templatecontrol folder.
+Run the script to create the templates inside the "templates" directory within the templatecontrol folder.
 
 ```
 git clone https://github.com/playframework/templatecontrol.git
@@ -355,7 +355,7 @@ Update `playReleases.json` and `changelog.md` in playframework.com website git r
 
 Note that the changelog should be updated describing all milestone/release candidates for the same release
 collectively. In addition the `playReleases.json` should be updated with the development releases in place i.e.
-you don’t need to publish information on both an M1 and an M2 release.  If the release is for the latest stable
+you don't need to publish information on both an M1 and an M2 release.  If the release is for the latest stable
 or development version, upgrade the website itself to use that version.
 
 You will also want to check that the downloads page has the right branch tag (i.e. 2.7.x) for the example code
@@ -372,7 +372,7 @@ Check that you have the right version numbers and that kickstartr / example-code
 
 Commit and push your changes.
 
-**NOTE**: you will need a distinct SSH public key for this.  Talk to James or Ed if you don’t have access.
+**NOTE**: you will need a distinct SSH public key for this.  Talk to James or Ed if you don't have access.
 
 To set up your public key:
 1. Ask someone else from Play team to add your pub key to the website instance.
