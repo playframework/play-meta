@@ -28,7 +28,7 @@ multiple projects.  Each project needs to be released individually, and does not
 re-released every time Play itself is released.  When cutting a release of Play, you need to make the following
 decisions:
 
-* Does this release of Play require releasing the modules that depend on it, eg play-ebean and play-slick.  For
+* Does this release of Play require releasing the modules that depend on it, eg play-grpc and play-slick.  For
   a typical minor release, it would not.  For a major release, and often for pre releases of major releases, the
   answer is yes.
 
@@ -117,9 +117,14 @@ will be broken until you release Omnidoc few steps down this document.
 
 **Warning**: If you are releasing a major version of Play which requires a new branch, for example, 2.7.0, you also need to configure MiMa before merging new features at this new branch. Ideally, do this as part of the release process.
 
-### Step 2 - release external modules (play-slick, play-ebean, scalatestplus-play)
+### Step 2 - release external modules
 
-This includes modules like play-slick, play-grpc and scalatestplus-play.  Only release these if they need to be
+This includes the modules
+* play-slick
+* scalatestplus-play
+* play-grpc
+
+Only release these if they need to be
 released, generally for minor Play releases, there's no reason to cut a new release of these, these libraries
 are free to have their own release cycle.
 
@@ -128,26 +133,33 @@ project will automatically see and use the latest minor versions of all modules,
 modules directly to update dependencies.
 
 You may need to bump the Play version in the external module, do this, commit, and depending on how major the
-version bump is, push directly to the repo or go through a pull request.  Once that is done, to release an
-external module:
+version bump is, push directly to the repo or go through a pull request.  Once that is done, to release:
+
+* play-slick
+* scalatestplus-play
+
+Run the `release` script on vegemite:
 
 ```
 cd deploy
 ./release --project <project> --branch <branch>
 ```
 
-Where project is, for example, play-ebean, play-slick,...
+Where project is, for example, scalatestplus-play, play-slick,...
+
+For play-grpc see its [Releasing](https://github.com/playframework/play-grpc/blob/master/RELEASING.md)
+procedure.
 
 Again, you will need to wait 10 minutes or so for a Maven central sync before you can perform any of the
 remaining tasks. In the meantime you can see the staged artifacts here on OSS Sonatype. E.g. here is a search
 for Play 2.6.3 artifacts:
-[https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play\~~2.6.3~~](https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.6.3~~)
+<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.7.0~~>
 
 **Verification**: You can check that the artifacts are available at Maven Central under
 play-slick_\<scalaversion\>, etc.
 
 https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.12/
-https://repo1.maven.org/maven2/com/typesafe/play/play-ebean_2.12/
+https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/
 https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.12/
 
 **Verification**: when you run sbt new playframework/play-{scala,java}-seed.g8 it should pick up the new version

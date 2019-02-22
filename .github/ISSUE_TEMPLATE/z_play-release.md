@@ -27,8 +27,8 @@ Better to do this in advance:
 
 - [ ] [Release external modules][]
   - [ ] release [play-slick][]
-  - [ ] release [play-ebean][]
   - [ ] release [scalatestplus-play][]
+  - [ ] release [play-grpc][]
 
 - [ ] [Release omnidoc][]
 
@@ -45,14 +45,14 @@ Better to do this in advance:
 
 [Release projects that Play depends on]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
 [Release Play itself]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-1---release-play-itself
-[Release external modules]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-2---release-external-modules-play-slick-play-ebean-scalatestplus-play
+[Release external modules]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-2---release-external-modules
 [Release omnidoc]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-3---release-omnidoc
 [Update playframework templates and seeds]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-4---update-playframework-templates-and-seeds
 [Update Example Code Service]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-5---update-example-code-service
 [Update playframework.com]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-6---update-playframeworkcom
 [Announce]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-7---announce
 
-[play-ebean]: https://github.com/playframework/play-ebean
+[play-grpc]: https://github.com/playframework/play-grpc
 [play-json]: https://github.com/playframework/play-json
 [play-slick]: https://github.com/playframework/play-slick
 [play-ws]: https://github.com/playframework/play-ws
