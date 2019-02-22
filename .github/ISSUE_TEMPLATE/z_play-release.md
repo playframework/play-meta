@@ -16,7 +16,7 @@ Better to do this in advance:
   - [ ] [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
   - [ ] Akka Team
 
-## Do the Release <https://github.com/lightbend/play-meta/blob/master/releasing/play.md>
+## Do the Release ([Full document](https://github.com/lightbend/play-meta/blob/master/releasing/play.md))
 
 - [ ] [Release projects that Play depends on][]
   - [ ] release [play-json][]
