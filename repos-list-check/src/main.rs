@@ -21,37 +21,23 @@ impl Repo {
 fn main() {
     let online_repos = get_online_repos();
     let local_repos = get_local_repos();
-    let archived = vec![
+    let excluded = vec![
         Repo::new("playframework", "modules.playframework.com"),
-        Repo::new("playframework", "modules.playframework.org"),
-        Repo::new("playframework", "play-1.0-scala-module"),
-        Repo::new("playframework", "play-glassfish"),
-        Repo::new("playframework", "play-plugins"),
-        Repo::new("playframework", "play-quota-java-example"),
-        Repo::new("playframework", "play-quota-scala-example"),
         Repo::new("playframework", "play1"),
-        Repo::new("playframework", "playclipse"),
-        Repo::new("playframework", "prune"),
-        Repo::new("playframework", "sbt-coffeescript"),
-        Repo::new("lagom", "activator-lagom-cargotracker"),
-        Repo::new("lagom", "activator-lagom-java"),
-        Repo::new("lagom", "grpc-sbt-experiments"),
         Repo::new("lagom", "lagom-at-so"),
-        Repo::new("lagom", "lagom-gameon-bazaar-service"),
-        Repo::new("lagom", "lagom-gameon-example"),
-        Repo::new("lagom", "lagom-gameon-maven-archetype"),
-        Repo::new("lagom", "lagom-grpc-labs"),
-        Repo::new("lagom", "persistence-api-experiments"),
-        Repo::new("lagom", "sbt-lagom-descriptor-generator"),
     ];
 
-    let res = online_repos.for_each(move |repo| {
-        if !local_repos.contains(&repo) && !archived.contains(&repo) {
+    let res = online_repos.for_each(move |r| {
+        let repo = Repo::new(r.owner.login.as_ref(), r.name.as_str());
+        if !local_repos.contains(&repo) && !excluded.contains(&repo) && !r.archived {
             println!(
                 "- [{owner}/{name}](https://github.com/{owner}/{name})",
                 owner = repo.owner,
-                name = repo.name
+                name = repo.name,
             )
+        }
+        if r.archived && excluded.contains(&repo) {
+            println!("Can drop {:?} from excluded", repo);
         }
         Ok(())
     });
@@ -82,7 +68,7 @@ fn get_local_repos() -> Vec<Repo> {
     })
 }
 
-fn get_online_repos() -> impl Stream<Item = Repo, Error = hubcaps::Error> {
+fn get_online_repos() -> impl Stream<Item = hubcaps::repositories::Repo, Error = hubcaps::Error> {
     use hubcaps::{repositories::*, *};
     let host = "https://api.github.com";
     let user_agent = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"));
@@ -93,6 +79,5 @@ fn get_online_repos() -> impl Stream<Item = Repo, Error = hubcaps::Error> {
     let opts = OrgRepoListOptions::default();
     let play_repos = github.org("playframework").repos().iter(&opts);
     let lagom_repos = github.org("lagom").repos().iter(&opts);
-    let repos = play_repos.chain(lagom_repos);
-    repos.map(|r| crate::Repo::new(r.owner.login, r.name))
+    play_repos.chain(lagom_repos)
 }

@@ -17,4 +17,4 @@ Run `cargo run`.  Any missing repo will be printed, in copy-and-paste form for r
 
 ## Detail
 
-Note there is a list of "archived" repos in the code, that acts as a filter.
+Note there is a list of excluded repos in the code, that acts as a filter.

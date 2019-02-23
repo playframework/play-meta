@@ -102,7 +102,9 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 - [lagom/lagom-java-grpc-example](https://github.com/lagom/lagom-java-grpc-example)
 - [lagom/lagom-java-sbt-chirper-example](https://github.com/lagom/lagom-java-sbt-chirper-example)
 - [lagom/lagom-java-maven-chirper-example](https://github.com/lagom/lagom-java-maven-chirper-example)
-- [lagom/lagom-scala-minimal-deployment-example](https://github.com/lagom/lagom-scala-minimal-deployment-example)
+- [lagom/lagom-java-openshift-smoketests](https://github.com/lagom/lagom-java-openshift-smoketests)
+- [lagom/lagom-scala-openshift-smoketests](https://github.com/lagom/lagom-scala-openshift-smoketests)
+- [lagom/shopping-cart-java](https://github.com/lagom/shopping-cart-java)
 - [lagom/shopping-cart-scala](https://github.com/lagom/shopping-cart-scala)
 - [lagom/ibm-integration-examples](https://github.com/lagom/ibm-integration-examples)
 
