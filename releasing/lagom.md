@@ -5,7 +5,7 @@
 * [Review the Changes](#review-the-changes)
 * [Before You Release](#before-you-release)
 * [Publish the Artifacts](#publish-the-artifacts)
-* [Update the Web Site](#update-the-site)
+* [Update the Web Site](#update-the-web-site)
 * [Update the g8 templates and example projects](#update-the-g8-templates-and-example-projects)
 * [Announce the Release](#announce-the-release)
 * [After-Release Cleanup](#after-release-cleanup)
