@@ -77,7 +77,7 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
 
 ## Publish the Artifacts
 
-SSH to `vegemite` and run:
+ssh into `vegemite` and run:
 
     screen -r # try first to reconnect to any existing session, and if that fails:
     screen sudo su - play # if you get disconnected, you can reconnect with screen -r
@@ -91,7 +91,7 @@ You'll be prompted to:
 * Confirm whether to push the updated version to GitHub (Yes)
 
 The artifacts are deployed to the Sonatype OSS Nexus repository and automatically promoted. This will be
-automatically synced to [Maven Central](http://repo2.maven.org/maven2/com/lightbend/lagom/).
+automatically synced to [Maven Central](https://repo1.maven.org/maven2/com/lightbend/lagom/).
 
 Before proceeding with the public release, test the artifacts by using them in an example project. If the
 artifacts are not yet in Maven Central, you can temporarily add the repository to your sbt session by adding
@@ -108,8 +108,9 @@ propagates changes you won't be able to test.
 
 Verify the release:
 
-* [https://bintray.com/lagom/sbt-plugin-releases/lagom-sbt-plugin/](https://bintray.com/lagom/sbt-plugin-releases/lagom-sbt-plugin/) must contain your version and be deployed using **SBT_LAYOUT** ( scala_{versions}/sbt_{versions}/1.4.7 )
-* [https://repo1.maven.org/maven2/com/lightbend/lagom/](https://repo1.maven.org/maven2/com/lightbend/lagom/) must contain all other artifacts for the new version.
+* <https://bintray.com/lagom/sbt-plugin-releases/lagom-sbt-plugin/> must contain your version and be deployed using
+  the **SBT_LAYOUT** (such as `scala_{versions}/sbt_{versions}/1.4.7`)
+* <https://repo1.maven.org/maven2/com/lightbend/lagom/> must contain all the other artifacts for the new version.
 
 ## Update the Web Site
 
