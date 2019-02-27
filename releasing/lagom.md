@@ -123,17 +123,17 @@ to find the most recent file to `tail` if you can to see what is happening.
 ## Update the g8 templates and example projects
 
 * Chirper (Maven & sbt):
-    * https://github.com/lagom/lagom-java-sbt-chirper-example/blob/master/project/plugins.sbt#L1
-    * https://github.com/lagom/lagom-java-maven-chirper-example/blob/master/pom.xml#L174
-* https://github.com/lagom/lagom-scala.g8/blob/master/src/main/g8/project/plugins.sbt
-* https://github.com/lagom/lagom-java.g8/blob/master/src/main/g8/project/plugins.sbt
-* https://github.com/lagom/online-auction-java/blob/master/project/plugins.sbt
-* https://github.com/lagom/online-auction-scala/blob/master/project/plugins.sbt
+    * <https://github.com/lagom/lagom-java-sbt-chirper-example/blob/1.5.x/project/plugins.sbt#L1>
+    * <https://github.com/lagom/lagom-java-maven-chirper-example/blob/1.5.x/pom.xml#L186>
+* <https://github.com/lagom/lagom-scala.g8/blob/master/src/main/g8/project/plugins.sbt>
+* <https://github.com/lagom/lagom-java.g8/blob/master/src/main/g8/project/plugins.sbt>
+* <https://github.com/lagom/online-auction-java/blob/1.5.x/project/plugins.sbt>
+* <https://github.com/lagom/online-auction-scala/blob/1.5.x/project/plugins.sbt>
 * Reactive Platform "supported modules" page (sbt plugin & artifacts):
-    * https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L73
-    * https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md
-* We also have examples in https://github.com/lagom/ibm-integration-examples and
-  https://github.com/lagom/lagom-recipes. We will not try to update these on every release, but may choose to do
+    * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L92>
+    * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
+* We also have examples in <https://github.com/lagom/ibm-integration-examples> and
+  <https://github.com/lagom/lagom-recipes>. We will not try to update these on every release, but may choose to do
   so on a case-by-case basis for more significant releases.
 
 ## Announce the Release
