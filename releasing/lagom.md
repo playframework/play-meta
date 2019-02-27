@@ -79,7 +79,7 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
 
 ssh into `vegemite` and run:
 
-    screen -r # try first to reconnect to any existing session, and if that fails:
+    screen -r # try reconnecting to an existing, detached session; to force detach add -d, otherwise:
     screen sudo su - play # if you get disconnected, you can reconnect with screen -r
     deploy/release --project lagom --branch <releaseBranch>
 
