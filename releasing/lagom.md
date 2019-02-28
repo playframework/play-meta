@@ -72,7 +72,7 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
     * Write a release blog post with highlights, contributions, etc. (Use the authors list you created above)
     * Update `currentLagomVersion`
     * If this is a MAJOR or MINOR version bump (RC or final), also update `currentDocsVersion`
-    * If this is a MILESTONE, update `previewVersions`
+    * If this is a MILESTONE or RC, update `previewVersions`
 * Copy the release announcement Markdown into [draft release notes on GitHub](https://github.com/lagom/lagom/releases).
 
 ## Publish the Artifacts
