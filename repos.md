@@ -57,7 +57,7 @@ These repositories are maintained by the Play Team.
 - [playframework/play-scala-grpc-example](https://github.com/playframework/play-scala-grpc-example)
 - [playframework/play-scala-hello-world-tutorial](https://github.com/playframework/play-scala-hello-world-tutorial)
 
-If in doubt about maintained samples, see [templatecontrol list](https://github.com/lightbend/templatecontrol/blob/master/src/main/scala/templatecontrol/model/Play.scala).
+If in doubt about maintained samples, see [templatecontrol list](https://github.com/playframework/templatecontrol/blob/master/src/main/scala/templatecontrol/model/Play.scala).
 
 ### Incubating
 
