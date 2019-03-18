@@ -125,6 +125,7 @@ to find the most recent file to `tail` if you can to see what is happening.
 #### Downstream
 
 * https://github.com/playframework/play-grpc/blob/master/project/Dependencies.scala#L14
+* https://github.com/akka/akka-persistence-couchbase/blob/master/project/Dependencies.scala#L14
 
 #### Docs    
 
@@ -157,7 +158,7 @@ to find the most recent file to `tail` if you can to see what is happening.
 * We also have examples in <https://github.com/lagom/ibm-integration-examples> and
   <https://github.com/lagom/lagom-recipes>. We will not try to update these on every release, but may choose to do
   so on a case-by-case basis for more significant releases.
-    
+  
 
 ## Announce the Release
 
