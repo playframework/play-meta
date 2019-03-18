@@ -120,21 +120,44 @@ Merge your release pull request and deploy the updated website from `vegemite`. 
 *NOTE*: the command logs its output to `~/logs/lagom-nightly-deploy-master-1532020306.log` or similar. You need
 to find the most recent file to `tail` if you can to see what is happening.
 
-## Update the g8 templates and example projects
+## Update the downstream projects and other deps
 
-* Chirper (Maven & sbt):
-    * <https://github.com/lagom/lagom-java-sbt-chirper-example/blob/1.5.x/project/plugins.sbt#L1>
-    * <https://github.com/lagom/lagom-java-maven-chirper-example/blob/1.5.x/pom.xml#L186>
-* <https://github.com/lagom/lagom-scala.g8/blob/master/src/main/g8/project/plugins.sbt>
-* <https://github.com/lagom/lagom-java.g8/blob/master/src/main/g8/project/plugins.sbt>
-* <https://github.com/lagom/online-auction-java/blob/1.5.x/project/plugins.sbt>
-* <https://github.com/lagom/online-auction-scala/blob/1.5.x/project/plugins.sbt>
+#### Downstream
+
+* https://github.com/playframework/play-grpc/blob/master/project/Dependencies.scala#L14
+
+#### Docs    
+
 * Reactive Platform "supported modules" page (sbt plugin & artifacts):
     * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L92>
     * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
+
+#### Samples
+
+* `g8` templates
+    * <https://github.com/lagom/lagom-scala.g8/blob/master/src/main/g8/project/plugins.sbt>
+    * <https://github.com/lagom/lagom-java.g8/blob/master/src/main/g8/project/plugins.sbt>
+* Chirper (Maven & sbt):
+    * <https://github.com/lagom/lagom-java-sbt-chirper-example/blob/1.5.x/project/plugins.sbt#L1>
+    * <https://github.com/lagom/lagom-java-maven-chirper-example/blob/1.5.x/pom.xml#L186>
+* Online Auction
+    * <https://github.com/lagom/online-auction-java/blob/1.5.x/project/plugins.sbt>
+    * <https://github.com/lagom/online-auction-scala/blob/1.5.x/project/plugins.sbt>
+* gRPC-samples
+    * https://github.com/lagom/lagom-scala-grpc-example/blob/1.5.x/project/plugins.sbt#L2
+    * https://github.com/lagom/lagom-java-grpc-example/blob/1.5.x/project/plugins.sbt#L2
+* OpenShift smoketests
+    * https://github.com/lagom/lagom-scala-openshift-smoketests/blob/1.5.x/project/plugins.sbt#L2
+    * https://github.com/lagom/lagom-java-openshift-smoketests/blob/1.5.x/pom.xml#L129
+* Shopping Cart
+    * https://github.com/lagom/shopping-cart-scala/blob/1.5.x/project/plugins.sbt#L2
+    * https://github.com/lagom/shopping-cart-java/blob/1.5.x/project/plugins.sbt#L2
+    * https://github.com/lagom/shopping-cart-java/blob/1.5.x/pom.xml#L182
+
 * We also have examples in <https://github.com/lagom/ibm-integration-examples> and
   <https://github.com/lagom/lagom-recipes>. We will not try to update these on every release, but may choose to do
   so on a case-by-case basis for more significant releases.
+    
 
 ## Announce the Release
 
