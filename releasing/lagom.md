@@ -153,6 +153,7 @@ Send a link to the release blog post around internally...
 ## After-Release Cleanup
 
 * For major or minor releases, be sure to add the new version to the MiMa checks (for example, see #1298)
+* If thhis s major release, make sure all the related sample apps and [downstream projects](https://github.com/lagom/lagom-akka-discovery-service-locator/tree/lagom-1.5.x) upgrade to use the approrpate version as thhe default branch (e.g. `1.5.x`https://github.com/lagom/online-auction-scala/branches).
 * If there is a new release branch, update the nightlies script on `vegemite` to ensure the documentation is deployed
     * The GitHub repository is the source of truth, so change it in a GitHub pull request first
     * After it is merged, ssh to `vegemite` and git pull the latest version
