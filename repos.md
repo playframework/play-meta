@@ -96,7 +96,6 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 
 - [lagom/online-auction-java](https://github.com/lagom/online-auction-java)
 - [lagom/online-auction-scala](https://github.com/lagom/online-auction-scala)
-- [lagom/lagom-java-chirper-example](https://github.com/lagom/lagom-java-chirper-example)
 - [lagom/lagom-recipes](https://github.com/lagom/lagom-recipes)
 - [lagom/lagom-scala-grpc-example](https://github.com/lagom/lagom-scala-grpc-example)
 - [lagom/lagom-java-grpc-example](https://github.com/lagom/lagom-java-grpc-example)
