@@ -120,7 +120,7 @@ Merge your release pull request and deploy the updated website from `vegemite`. 
 *NOTE*: the command logs its output to `~/logs/lagom-nightly-deploy-master-1532020306.log` or similar. You need
 to find the most recent file to `tail` if you can to see what is happening.
 
-## Update the downstream projects and other deps
+## Update the g8 templates and example projects
 
 #### Downstream
 
