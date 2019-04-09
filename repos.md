@@ -113,7 +113,10 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 
 * [play-meta](https://github.com/playframework/play-meta)
 * [play-team](https://github.com/lightbend/play-team)
+- [templatecontrol](https://github.com/playframework/templatecontrol)
 * [vegemite](https://github.com/lightbend/vegemite)
+- [playframework/.github](https://github.com/playframework/.github)
+- [lagom/.github](https://github.com/lagom/.github)
 
 ## Co-maintained repositories
 
