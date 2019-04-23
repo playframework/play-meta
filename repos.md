@@ -17,47 +17,13 @@ These repositories are maintained by the Play Team.
 - [playframework/play-file-watch](https://github.com/playframework/play-file-watch)
 - [playframework/play-json](https://github.com/playframework/play-json)
 - [playframework/play-ws](https://github.com/playframework/play-ws)
+- [playframework/play-samples](https://github.com/playframework/play-samples)
+- [playframework/play-webgoat](https://github.com/playframework/play-webgoat)
 
 ### Seeds
 
 - [playframework/play-scala-seed.g8](https://github.com/playframework/play-scala-seed.g8)
 - [playframework/play-java-seed.g8](https://github.com/playframework/play-java-seed.g8)
-
-### Samples
-
-- [playframework/play-scala-websocket-example](https://github.com/playframework/play-scala-websocket-example)
-- [playframework/play-java-websocket-example](https://github.com/playframework/play-java-websocket-example)
-- [playframework/play-scala-tls-example](https://github.com/playframework/play-scala-tls-example)
-- [playframework/play-scala-anorm-example](https://github.com/playframework/play-scala-anorm-example)
-- [playframework/play-java-ebean-example](https://github.com/playframework/play-java-ebean-example)
-- [playframework/play-scala-macwire-di-example](https://github.com/playframework/play-scala-macwire-di-example)
-- [playframework/play-scala-isolated-slick-example](https://github.com/playframework/play-scala-isolated-slick-example)
-- [playframework/play-scala-streaming-example](https://github.com/playframework/play-scala-streaming-example)
-- [playframework/play-scala-secure-session-example](https://github.com/playframework/play-scala-secure-session-example)
-- [playframework/play-scala-log4j2-example](https://github.com/playframework/play-scala-log4j2-example)
-- [playframework/play-scala-compile-di-example](https://github.com/playframework/play-scala-compile-di-example)
-- [playframework/play-java-streaming-example](https://github.com/playframework/play-java-streaming-example)
-- [playframework/play-scala-fileupload-example](https://github.com/playframework/play-scala-fileupload-example)
-- [playframework/play-java-fileupload-example](https://github.com/playframework/play-java-fileupload-example)
-- [playframework/play-scala-rest-api-example](https://github.com/playframework/play-scala-rest-api-example)
-- [playframework/play-scala-starter-example](https://github.com/playframework/play-scala-starter-example)
-- [playframework/play-java-starter-example](https://github.com/playframework/play-java-starter-example)
-- [playframework/play-java-jpa-example](https://github.com/playframework/play-java-jpa-example)
-- [playframework/play-scala-slick-example](https://github.com/playframework/play-scala-slick-example)
-- [playframework/play-scala-chatroom-example](https://github.com/playframework/play-scala-chatroom-example)
-- [playframework/play-java-chatroom-example](https://github.com/playframework/play-java-chatroom-example)
-- [playframework/play-java-compile-di-example](https://github.com/playframework/play-java-compile-di-example)
-- [playframework/play-java-dagger2-example](https://github.com/playframework/play-java-dagger2-example)
-- [playframework/play-java-rest-api-example](https://github.com/playframework/play-java-rest-api-example)
-- [playframework/play-scala-forms-example](https://github.com/playframework/play-scala-forms-example)
-- [playframework/play-java-forms-example](https://github.com/playframework/play-java-forms-example)
-- [playframework/play-webgoat](https://github.com/playframework/play-webgoat)
-- [playframework/play-java-hello-world-tutorial](https://github.com/playframework/play-java-hello-world-tutorial)
-- [playframework/play-java-grpc-example](https://github.com/playframework/play-java-grpc-example)
-- [playframework/play-scala-grpc-example](https://github.com/playframework/play-scala-grpc-example)
-- [playframework/play-scala-hello-world-tutorial](https://github.com/playframework/play-scala-hello-world-tutorial)
-
-If in doubt about maintained samples, see [templatecontrol list](https://github.com/playframework/templatecontrol/blob/master/src/main/scala/templatecontrol/model/Play.scala).
 
 ### Incubating
 
