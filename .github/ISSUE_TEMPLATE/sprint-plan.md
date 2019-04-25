@@ -7,22 +7,13 @@ assignees: ''
 
 ---
 
-[Previous sprint plans](https://github.com/lightbend/play-meta/issues?q=label:sprint-plan+sort:created-desc)
-
-## Dates
-
-- Start: 2019-xx-xx
-- End: 2019-xx-xx
-
-## Absences
-
-- @marcospereira
-- @renatocaval
-- @ignasi35
-- @dwijnand
-
-## Objectives/Tasks
-
 - [ ]
 - [ ]
 - [ ]
+
+###### Metadata
+
+* Dates: 2019-xx-xx - 2019-xx-xx
+* [Previous Sprint](https://github.com/playframework/play-meta/issues/xx) (search <https://github.com/lightbend/play-meta/issues?q=label:sprint-plan+sort:created-desc>)
+* Support Rota: xx then xx
+* Person days: xx/30
