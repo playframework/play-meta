@@ -211,6 +211,14 @@ https://www.playframework.com/documentation/2.6.15/Home.
 
 ### Step 4 - update playframework templates and seeds
 
+#### Docs
+
+* Update the Lightbend Platform "supported modules" page (sbt plugin & artifacts):
+    * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L15>
+    * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
+
+#### Other
+
 The "core" playframework templates describe Play's overall feature set -- they are maintained by the Play team
 and in the <https://github.com/playframework/> GitHub organisation.  Historically, there were issues with out of date Activator
 templates, and confusion between what was supported and current, and what was third-party and out of date.
