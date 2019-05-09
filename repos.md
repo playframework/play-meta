@@ -51,7 +51,6 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 
 - [lagom/lagom](https://github.com/lagom/lagom)
 - [lagom/lagom.github.io](https://github.com/lagom/lagom.github.io)
-- [lagom/lagom-akka-discovery-service-locator](https://github.com/lagom/lagom-akka-discovery-service-locator)
 
 ### Seeds
 
@@ -63,7 +62,6 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 - [lagom/lagom-samples](https://github.com/lagom/lagom-samples)
 - [lagom/online-auction-java](https://github.com/lagom/online-auction-java)
 - [lagom/online-auction-scala](https://github.com/lagom/online-auction-scala)
-- [lagom/lagom-recipes](https://github.com/lagom/lagom-recipes)
 - [lagom/lagom-scala-grpc-example](https://github.com/lagom/lagom-scala-grpc-example)
 - [lagom/lagom-java-grpc-example](https://github.com/lagom/lagom-java-grpc-example)
 - [lagom/lagom-java-sbt-chirper-example](https://github.com/lagom/lagom-java-sbt-chirper-example)

@@ -39,6 +39,9 @@ fn main() {
         if r.archived && excluded.contains(&repo) {
             println!("Can drop {:?} from excluded", repo);
         }
+        if local_repos.contains(&repo) && r.archived {
+            println!("Can drop {:?} from repos.md", repo);
+        }
         Ok(())
     });
 
