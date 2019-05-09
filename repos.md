@@ -60,6 +60,7 @@ These repositories are _not_ maintained by the Play Team.  The list is merely in
 
 ### Samples
 
+- [lagom/lagom-samples](https://github.com/lagom/lagom-samples)
 - [lagom/online-auction-java](https://github.com/lagom/online-auction-java)
 - [lagom/online-auction-scala](https://github.com/lagom/online-auction-scala)
 - [lagom/lagom-recipes](https://github.com/lagom/lagom-recipes)
