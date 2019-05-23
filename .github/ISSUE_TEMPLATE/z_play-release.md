@@ -45,6 +45,8 @@ Better to do this in advance:
   - [ ] Send an internal email to eng-updates
   - [ ] Tweet about the new release.
 
+- [ ] [Post release tasks][]
+
 [Triage issues]: https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+
 [Release projects that Play depends on]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
 [Release Play itself]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-1---release-play-itself
@@ -55,6 +57,7 @@ Better to do this in advance:
 [Update Example Code Service]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-5---update-example-code-service
 [Update playframework.com]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-6---update-playframeworkcom
 [Announce]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-7---announce
+[Post release tasks]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-8---post-release-tasks
 
 [play-grpc]: https://github.com/playframework/play-grpc
 [play-json]: https://github.com/playframework/play-json
