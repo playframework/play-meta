@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## Communicate the release
+## Preparing the release
 
 Better to do this in advance:
 
@@ -15,6 +15,7 @@ Better to do this in advance:
   - [ ] [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
   - [ ] [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
   - [ ] Akka Team
+- [ ] [Triage issues][]
 
 ## Do the Release ([Full document](https://github.com/playframework/play-meta/blob/master/releasing/play.md))
 
@@ -44,6 +45,7 @@ Better to do this in advance:
   - [ ] Send an internal email to eng-updates
   - [ ] Tweet about the new release.
 
+[Triage issues]: https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+
 [Release projects that Play depends on]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
 [Release Play itself]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-1---release-play-itself
 [Release external modules]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-2---release-external-modules

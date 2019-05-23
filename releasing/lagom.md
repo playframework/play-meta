@@ -1,14 +1,21 @@
 # Releasing Lagom
 
-* [Release tracking issue](#release-tracking-issue)
-* [First-time Setup](#first-time-setup)
-* [Review the Changes](#review-the-changes)
-* [Before You Release](#before-you-release)
-* [Publish the Artifacts](#publish-the-artifacts)
-* [Update the Web Site](#update-the-web-site)
-* [Update the g8 templates and example projects](#update-the-g8-templates-and-example-projects)
-* [Announce the Release](#announce-the-release)
-* [After-Release Cleanup](#after-release-cleanup)
+- [Releasing Lagom](#releasing-lagom)
+  - [Release tracking issue](#release-tracking-issue)
+  - [First-time Setup](#first-time-setup)
+  - [Review the Changes](#review-the-changes)
+    - [Manual verifications (optional)](#manual-verifications-optional)
+  - [Before You Release](#before-you-release)
+    - [Issues and pull request triage](#issues-and-pull-request-triage)
+    - [Preparing the release](#preparing-the-release)
+  - [Publish the Artifacts](#publish-the-artifacts)
+  - [Update the Web Site](#update-the-web-site)
+  - [Update the g8 templates and example projects](#update-the-g8-templates-and-example-projects)
+    - [Downstream](#downstream)
+    - [Docs](#docs)
+    - [Samples](#samples)
+  - [Announce the Release](#announce-the-release)
+  - [After-Release Cleanup](#after-release-cleanup)
 
 ## Release tracking issue
 
@@ -18,8 +25,8 @@ Create a new [release tracking issue][].
 
 ## First-time Setup
 
- * Get access to vegemite
- * Read the [vegemite docs][]
+* Get access to vegemite
+* Read the [vegemite docs][]
 
 [vegemite docs]: https://github.com/lightbend/vegemite/blob/master/README.md
 
@@ -57,6 +64,12 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
 
 ## Before You Release
 
+### Issues and pull request triage
+
+See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Alagom+archived%3Afalse+) and are possibly related to the upcoming release. This is mainly important if you are doing a minor or major release.
+
+### Preparing the release
+
 * Email Marketing to let them know about the planned release date.
     * Let them know whether it's a major, minor or patch release
     * For a patch release, a day or two of notice is sufficient
@@ -69,7 +82,7 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
   "Reviewing the Changes" above. This way you can make sure the GH milestone lists the correct information.
 * Ensure that the branch has a green build in [Travis CI](https://travis-ci.org/lagom/lagom/branches)
 * Create a pull request against the project with changes for the release:
-    * Write a release blog post with highlights, contributions, etc. (Use the authors list you created above)
+    * If it is a major or minor release, write a release blog post with highlights, contributions, etc. (Use the authors list you created above). This is not necessary for patch releases
     * Update `currentLagomVersion`
     * If this is a MAJOR or MINOR version bump (RC or final), also update `currentDocsVersion`
     * If this is a MILESTONE or RC, update `previewVersions`
@@ -122,18 +135,18 @@ to find the most recent file to `tail` if you can to see what is happening.
 
 ## Update the g8 templates and example projects
 
-#### Downstream
+### Downstream
 
 * https://github.com/playframework/play-grpc/blob/master/project/Dependencies.scala#L14
 * https://github.com/akka/akka-persistence-couchbase/blob/master/project/Dependencies.scala#L14
 
-#### Docs    
+### Docs
 
 * Reactive Platform "supported modules" page (sbt plugin & artifacts):
     * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L92>
     * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
 
-#### Samples
+### Samples
 
 * `g8` templates
     * <https://github.com/lagom/lagom-scala.g8/blob/master/src/main/g8/project/plugins.sbt>
@@ -159,7 +172,6 @@ to find the most recent file to `tail` if you can to see what is happening.
   <https://github.com/lagom/lagom-recipes>. We will not try to update these on every release, but may choose to do
   so on a case-by-case basis for more significant releases.
   
-
 ## Announce the Release
 
 Send a link to the release blog post around internally...
@@ -170,15 +182,19 @@ Send a link to the release blog post around internally...
 ...and publicly
 
 * Gitter
-* https://discuss.lightbend.com (Use the blog post write up to copy/paste into a new discuss topic)
+* <https://discuss.lightbend.com> (Use the blog post write up to copy/paste into a new discuss topic)
 * Twitter (usually handled by marketing... be sure to let them know when the blog post is published)
 * Publish release notes on GitHub
 
 ## After-Release Cleanup
 
+* Milestones cleanup
+  * Make you closed the milestone for the release (for example, 1.5.0)
+  * Create a new milestone for the next release (for example, 1.5.1)
+  * Move issues and pull requests from the old milestone to the new one if necessary
 * For major or minor releases, be sure to add the new version to the MiMa checks (for example, see #1298)
 * If this is MAJOR release, make sure all the related sample apps and [downstream projects](https://github.com/lagom/lagom-akka-discovery-service-locator/tree/lagom-1.5.x) upgrade to use the appropriate version as the default branch (e.g. `1.5.x`https://github.com/lagom/online-auction-scala/branches).
 * If there is a new release branch, update the nightlies script on `vegemite` to ensure the documentation is deployed
-    * The GitHub repository is the source of truth, so change it in a GitHub pull request first
-    * After it is merged, ssh to `vegemite` and git pull the latest version
-    * It's a good idea to test running the command manually rather than waiting for the next nightly run
+  * The GitHub repository is the source of truth, so change it in a GitHub pull request first
+  * After it is merged, ssh to `vegemite` and git pull the latest version
+  * It's a good idea to test running the command manually rather than waiting for the next nightly run
