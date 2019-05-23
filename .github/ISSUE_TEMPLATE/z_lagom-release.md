@@ -12,6 +12,7 @@ assignees: ''
 - [ ] [First-time Setup][]
 - [ ] [Review the Changes][]
 - [ ] [Before You Release][]
+  - [ ] [Triage issues][]
 - [ ] [Publish the Artifacts][]
 - [ ] [Update the Web Site][] <https://github.com/lagom/lagom.github.io/pull/???>
 - [ ] [Update the g8 templates and example projects][]
@@ -21,6 +22,7 @@ assignees: ''
 [First-time Setup]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#first-time-setup
 [Review the Changes]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#review-the-changes
 [Before You Release]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#before-you-release
+[Triage issues]: https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Alagom+archived%3Afalse+
 [Publish the Artifacts]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#publish-the-artifacts
 [Update the Web Site]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#update-the-web-site
 [Update the g8 templates and example projects]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#update-the-g8-templates-and-example-projects

@@ -1,19 +1,39 @@
-# Releasing Play
+# Play Release Procedure
 
-* [Before the release](#before-the-release)
-* [Release tracking issue](#release-tracking-issue)
-* [Intro](#intro)
-* [Prerequisites](#prerequisites)
-* [If something goes wrong](#if-something-goes-wrong)
-* [Releasing Play](#releasing-play)
+- [Play Release Procedure](#play-release-procedure)
+  - [Before the release](#before-the-release)
+    - [Internal communication](#internal-communication)
+    - [Issues and pull request triage](#issues-and-pull-request-triage)
+  - [Release tracking issue](#release-tracking-issue)
+  - [Intro](#intro)
+  - [Prerequisites](#prerequisites)
+  - [If something goes wrong](#if-something-goes-wrong)
+  - [Releasing Play](#releasing-play)
+    - [Step 0 - release projects that Play depends on (play-json, play-ws, Twirl)](#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl)
+    - [Step 1 - release Play itself](#step-1---release-play-itself)
+    - [Step 2 - release external modules](#step-2---release-external-modules)
+    - [Step 3 - release omnidoc](#step-3---release-omnidoc)
+    - [Step 4 - update playframework templates and seeds](#step-4---update-playframework-templates-and-seeds)
+      - [Docs](#docs)
+      - [Other](#other)
+    - [Step 5 - Update Example Code Service](#step-5---update-example-code-service)
+    - [Step 6 - Update playframework.com](#step-6---update-playframeworkcom)
+    - [Step 7 - Announce](#step-7---announce)
+    - [Step 8 - Post release tasks](#step-8---post-release-tasks)
 
 ## Before the release
+
+### Internal communication
 
 Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one. For example:
 
 1. [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
-1. [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
-1. Akka Team
+2. [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
+3. Akka Team
+
+### Issues and pull request triage
+
+See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+) and are possibly related to the upcoming release. This is mainly important if you are doing a minor or major release.
 
 ## Release tracking issue
 
@@ -61,7 +81,7 @@ numbers are cheap.
 
 If the build failed during or before the publishing of artifacts, but not after either the bintray or maven
 central promotion, you can drop the maven central staging repository and delete bintray version.  This can
-either be done through their corresponding web interfaces, or by using the sonatypeDrop and bintrayUnpublish sbt
+either be done through their corresponding web interfaces, or by using the `sonatypeDrop` and `bintrayUnpublish` sbt
 commands.
 
 ## Releasing Play
@@ -71,7 +91,7 @@ commands.
 Prepare the branch for each project:
 
 * Look for PRs that should be merged.
-* Look at needs-backport issues/PRs (including closed ones).
+* Look at `status:needs-backport` issues/PRs (including closed ones).
 * Look at issues/PRs tagged milestone version (including closed ones).
 * Update any dependencies that are needed.
 * Update any upstream projects (e.g make sure new play-ws is using new play-json)
@@ -90,7 +110,7 @@ cd deploy
 Prepare the branch:
 
 * Look for PRs that should be merged.
-* Look at needs-backport issues/PRs (including closed ones).
+* Look at [`status:needs-backport`](https://github.com/playframework/playframework/issues?utf8=%E2%9C%93&q=label%3Astatus%3Aneeds-backport+) issues/PRs (including closed ones). If you are releasing an older version of Play, look at the `status:needs-backport-x.x` label too.
 * Look at issues/PRs tagged milestone version (including closed ones).
 * Updated any dependencies that are needed (e.g. Dependencies.scala)
 
@@ -108,7 +128,7 @@ Once Play is released, you need to wait 10 minutes or so for a Maven central syn
 the remaining tasks.
 
 **Verification**: You can check that the artifacts are available at Maven Central under play_\<scalaversion>.
-https://repo1.maven.org/maven2/com/typesafe/play/
+<https://repo1.maven.org/maven2/com/typesafe/play/>
 
 **Warning**: the play release will create a tag on the repository and push it to GitHub. That will trigger one
 or two travis jobs that are granted to fail. The reason of the failure is a circular dependency with Omnidoc.
@@ -119,7 +139,8 @@ will be broken until you release Omnidoc few steps down this document.
 
 ### Step 2 - release external modules
 
-This includes the modules
+This includes the modules:
+
 * play-slick
 * scalatestplus-play
 * play-grpc
@@ -140,7 +161,7 @@ version bump is, push directly to the repo or go through a pull request.  Once t
 
 Run the `release` script on vegemite:
 
-```
+```bash
 cd deploy
 ./release --project <project> --branch <branch>
 ```
@@ -158,9 +179,9 @@ for Play 2.6.3 artifacts:
 **Verification**: You can check that the artifacts are available at Maven Central under
 play-slick_\<scalaversion\>, etc.
 
-https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.12/
-https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/
-https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.12/
+* <https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.12/>
+* <https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/>
+* <https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.12/>
 
 **Verification**: when you run sbt new playframework/play-{scala,java}-seed.g8 it should pick up the new version
 on Maven. Try the templates out. You may need to update them (possibly with templatecontrol?) if they don't work
@@ -189,33 +210,34 @@ These changes can generally be pushed directly to GitHub.
 
 To release omnidoc:
 
-```
+```bash
 cd deploy
 ./release --project omnidoc --branch <branch>
 ```
 
 **Verification**: check that the artifacts are available at Maven Central under play-omnidoc_<scalaversion>. It
-may take a few minutes.  https://repo1.maven.org/maven2/com/typesafe/play/
+may take a few minutes. <https://repo1.maven.org/maven2/com/typesafe/play/>
 
 Once that is done, you can update the docs on playframework.com, by running: (use the branch to push to in
-https://github.com/playframework/play-generated-docs and the tag id you want to create)
+<https://github.com/playframework/play-generated-docs> and the tag id you want to create)
 
-    ./omnidoc/bin/deploy --branch <branch> --tag <tag> \
-         /home/play/deploy/play-generated-docs
+```bash
+./omnidoc/bin/deploy --branch <branch> --tag <tag> /home/play/deploy/play-generated-docs
+```
 
-Verification: check there is a new tag <tag> at https://github.com/playframework/play-generated-docs project. It
-should be on top of https://github.com/playframework/play-generated-docs/releases. The website should pick this
+Verification: check there is a new tag `<tag>` at <https://github.com/playframework/play-generated-docs> project. It
+should be on top of <https://github.com/playframework/play-generated-docs/releases>. The website should pick this
 tagged version of the generated docs up to 10 minutes later. You can check that then using the following URL
-pattern: https://www.playframework.com/documentation/<tag>/Home. For example
-https://www.playframework.com/documentation/2.6.15/Home.
+pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
+<https://www.playframework.com/documentation/2.7.2/Home>.
 
 ### Step 4 - update playframework templates and seeds
 
 #### Docs
 
 * Update the Lightbend Platform "supported modules" page (sbt plugin & artifacts):
-    * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L15>
-    * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
+  * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L15>
+  * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
 
 #### Other
 
@@ -232,64 +254,62 @@ upgrades.  It's safe to run, but you will need local forks of all the template p
 
 Create a PR from the version you want so that your changes are captured. For example:
 
-```
-git checkout -b upgrade-2.5.13
+```bash
+git checkout -b upgrade-2.7.2
 vim src/main/resources/<play-branch-name>.conf
 ```
 
-After updating the .conf files, commit and push your changes, submit a new pull request to templatecontrol
+After updating the `.conf` files, commit and push your changes, submit a new pull request to templatecontrol
 project, merge it and then run templatecontrol:
 
 Note the prerequisites detailed in <https://github.com/playframework/templatecontrol#prerequisites>.
 
-```
+```bash
 sbt run
 ```
-
 
 **Verification**: Check out a local copy of play-scala-starter-example and play-java-starter-example locally and
 smoke test them locally:
 
-1. $ git clone https://github.com/<yourname>/play-scala-starter-example.git
-1. $ cd play-scala-starter-example
-1. $ git fetch origin templatecontrol-2.6.x
-1. $ git checkout templatecontrol-2.6.x
-1. $ git diff HEAD^
-1. $ sbt
-1. \> show dependencyClasspath
-1. \> test
-1. \> run
-
-Then do "sbt run" and check that all the projects build successfully from #play-buzz -- then merge PR and delete
-branch for each project (two button clicks).
+1. $ git clone https://github.com/<yourname>/play-samples.git
+2. $ cd play-samples
+3. $ git fetch origin templatecontrol-2.7.x
+4. $ git checkout templatecontrol-2.7.x
+5. $ git diff HEAD^
+6. $ cd play-scala-starter-example
+7. $ sbt
+8. \> show dependencyClasspath
+9. \> test
+10. \> run
 
 Once you're done, commit your changes and merge the updated version into the project:
 
-    git commit -am "upgrade section to play 2.5.13"
-    git push origin upgrade-2.5.13
-    hub pull-request --browse
+```bash
+git commit -am "upgrade section to play 2.7.2"
+git push origin upgrade-2.7.2
+hub pull-request --browse
+```
 
 So that everything is up to date.
 
-**Verification**: Each of the example templates has CI integration into #play-buzz, so creating a new pull
-request will kick off a build and you'll be notified of what passes and what fails.
+**Verification**: The sample repository builds can be seen at <https://travis-ci.com/playframework/play-samples>. Make sure the build is green and then merge the pull request (it is possible Mergify will do that automatically).
 
 There is an integration through webhook to example-code-service: see
-https://github.com/lightbend/example-code-service/ for what is on their end for packaging ./sbt in a zip file.
+<https://github.com/lightbend/example-code-service/> for what is on their end for packaging `./sbt` in a zip file.
 
 ### Step 5 - Update Example Code Service
 
 The Example Code Service will need to be updated to point to the new versions.  All the play templates are in
 play-templates.conf:
 
-https://github.com/lightbend/example-code-service/blob/master/example-code-service/conf/play-templates.conf
+<https://github.com/lightbend/example-code-service/blob/master/example-code-service/conf/play-templates.conf>
 
 You will need to have unique names for each template, so rename the current templates so it follows the
 templates with the version explicitly appended (see bold bits):
 
 i.e. when you come out with 2.7.0, you rename the current one to
 
-```
+```conf
 {
   display-name = "Play Java using Dagger 2 for Compile Time DI (2.6.x)"
   name = "play-java-dagger2-example-2.6.x"
@@ -305,12 +325,12 @@ Create a pull request with all the updates, test it, run some examples with "sbt
 example-code-service and push.  The deploy should be automatic, but you may want to check with "tooling team"
 that you did it right and it is updated.
 
-**Verification**: visit https://developer.lightbend.com/start/?group=play and download a template and check that
+**Verification**: visit <https://developer.lightbend.com/start/?group=play> and download a template and check that
 it's up-to-date and works properly.
 
 ### Step 6 - Update playframework.com
 
-Update `playReleases.json` and `changelog.md` in playframework.com website git repository.
+Update `playReleases.json` and `changelog.md` in [playframework.com website git repository](https://github.com/playframework/playframework.com/).
 
 Note that the changelog should be updated describing all milestone/release candidates for the same release
 collectively. In addition the `playReleases.json` should be updated with the development releases in place i.e.
@@ -321,8 +341,8 @@ You will also want to check that the downloads page has the right branch tag (i.
 service branches that you just updated.  This is defined in playframework/playframework.com, under the
 application.conf setting:
 
-```
-examples.playVersions = [ "2.5.x", "2.6.x" ]
+```conf
+examples.playVersions = [ "2.7.x", "2.6.x" ]
 ```
 
 **Verification**: Run playframework.com locally on your machine and check the /download and /changelog pages.
@@ -334,8 +354,9 @@ Commit and push your changes.
 **NOTE**: you will need a distinct SSH public key for this.  Talk to James or Ed if you don't have access.
 
 To set up your public key:
+
 1. Ask someone else from Play team to add your pub key to the website instance.
-1. Edit ~/.ssh/config and add the following:
+2. Edit ~/.ssh/config and add the following:
 
 ```
  Host www.playframework.com
@@ -343,25 +364,30 @@ To set up your public key:
   Hostname 54.173.126.144
 ```
 
-3. You can now log in: ssh ubuntu@www.playframework.com
+3. You can now log in: `ssh ubuntu@www.playframework.com`
 
 ssh into `ubuntu@www.playframework.com`, and run `./deploy.sh`
 
-**Verification**: Check that https://www.playframework.com/download#alternatives contains the new release.
+**Verification**: Check that <https://www.playframework.com/download#alternatives> contains the new release.
 
 ### Step 7 - Announce
 
-* Write a blog post on https://playframework.ghost.io/ghost/24/ about the release.
-* Write a topic on https://discuss.lightbend.com/
-* Write a release on https://github.com/playframework/playframework/releases
+* If it is a major or minor release, write a blog post on <https://playframework.ghost.io/ghost/24/> about the release (not necessary for patch releases).
+* Write a topic on <https://discuss.lightbend.com/>
+* Write a release on <https://github.com/playframework/playframework/releases>
 * Send an internal email to eng-updates
 * Tweet about the new release.
 
 **Tip**: To get a list of authors:
 
-```
-git fetch --tags && git shortlog -s 2.6.13..2.6.14 | cut -c8- | sort
+```bash
+git fetch --tags && git shortlog -s 2.7.1..2.7.2 | cut -c8- | sort
 ```
 
-**Verification**: Go to https://discuss.lightbend.com/ and https://twitter.com/playframework look for the
-message and tweet.
+**Verification**: Go to <https://discuss.lightbend.com/> and <https://twitter.com/playframework> look for the message and tweet.
+
+### Step 8 - Post release tasks
+
+1. Close the milestone for the release (for example 2.7.1)
+2. Create a new milestone for the next release (for example 2.7.2)
+3. Move issues and pull requests from the old milestone to the new one if necessary
