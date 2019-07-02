@@ -87,7 +87,7 @@ ssh into `vegemite` and run:
     screen sudo su - play # if you get disconnected, you can reconnect with screen -r
     deploy/release --project lagom --branch <releaseBranch> --tag <new-tag>
 
-NOTE: `--tag <new-tag>` is meant for projects using `sbt-dynver` which also need a custom `release` script in their `sbt` build.
+NOTE: `--tag <new-tag>` is meant for branches already using `sbt-dynver`. Other branches have the legacy [release settings](https://github.com/lagom/lagom/blob/1.5.x/build.sbt#L89-L109) which expect a `version.sbt` and handle tagging.
 
 You'll be prompted to:
 
