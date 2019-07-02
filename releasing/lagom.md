@@ -87,9 +87,13 @@ ssh into `vegemite` and run:
     screen sudo su - play # if you get disconnected, you can reconnect with screen -r
     deploy/release --project lagom --branch <releaseBranch> --tag <new-tag>
 
+NOTE: `--tag <new-tag>` is meant for projects using `sbt-dynver` which also need a custom `release` script in their `sbt` build.
+
 You'll be prompted to:
 
 * Confirm the release
+* (optional) Set the release version
+* (optional) Set the next SNAPSHOT version
 * Confirm whether to push the updated version to GitHub (Yes)
 
 The artifacts are deployed to the Sonatype OSS Nexus repository and automatically promoted. This will be
