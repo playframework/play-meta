@@ -34,8 +34,7 @@ Create a new [release tracking issue][].
 
 Before doing anything else, it's a good idea to review the changes in the release branch.
 
-On the root of the project you can find a script named `changelog.sh`. You can run it to produce a list of
-commits starting from a given tag and up to head or between to tags.
+_(Outdated: This no longer lists clean PR merge-commits but a rather long output. Usable, not as friendly)_ On the root of the project you can find a script named `changelog.sh`. You can run it to produce a list of commits starting from a given tag and up to head or between to tags.
 
     bin/changelog.sh 1.3.8         # print change log starting from tag 1.3.8 up to HEAD
     bin/changelog.sh 1.3.7 1.3.8   # print change log starting from tag 1.3.7 up to 1.3.8
@@ -49,13 +48,6 @@ or most recent stable branch, but you can use changelog to create the lists to d
 
 This prints the authors (without headers on the columns). You'll need this on the release notes. The
 `authors.pl` is useless in M1 releases.
-
-Some lines may be missing GitHub issue references. You'll need to decide for each one whether to find an issue
-to link it to in the changelog, include it in the changelog without an issue link, or omit it from the changelog
-entirely. Merge commits and automated commits that only change the version number should always be left out.
-
-*Bonus points*: once you have a clean list of issues with the appropriate link to GitHub and issue number, use
-sort -r to have the list sorted in reverse numerical order so it's easier to locate a particular issue.
 
 ### Manual verifications (optional)
 
@@ -82,11 +74,10 @@ See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C
   "Reviewing the Changes" above. This way you can make sure the GH milestone lists the correct information.
 * Ensure that the branch has a green build in [Travis CI](https://travis-ci.org/lagom/lagom/branches)
 * Create a pull request against the project with changes for the release:
-    * If it is a major or minor release, write a release blog post with highlights, contributions, etc. (Use the authors list you created above). This is not necessary for patch releases
+    * If it is a major or minor release, write [GitHub release notes](https://github.com/lagom/lagom/releases) with highlights, contributions, etc. (Use the authors list you created above). This is not necessary for patch releases
     * Update `currentLagomVersion`
     * If this is a MAJOR or MINOR version bump (RC or final), also update `currentDocsVersion`
     * If this is a MILESTONE or RC, update `previewVersions`
-* Copy the release announcement Markdown into [draft release notes on GitHub](https://github.com/lagom/lagom/releases).
 
 ## Publish the Artifacts
 
@@ -94,13 +85,15 @@ ssh into `vegemite` and run:
 
     screen -r # try reconnecting to an existing, detached session; to force detach add -d, otherwise:
     screen sudo su - play # if you get disconnected, you can reconnect with screen -r
-    deploy/release --project lagom --branch <releaseBranch>
+    deploy/release --project lagom --branch <releaseBranch> --tag <new-tag>
+
+NOTE: `--tag <new-tag>` is meant for branches already using `sbt-dynver`. Other branches have the legacy [release settings](https://github.com/lagom/lagom/blob/1.5.x/build.sbt#L89-L109) which expect a `version.sbt` and handle tagging.
 
 You'll be prompted to:
 
 * Confirm the release
-* Set the release version
-* Set the next SNAPSHOT version
+* (optional) Set the release version
+* (optional) Set the next SNAPSHOT version
 * Confirm whether to push the updated version to GitHub (Yes)
 
 The artifacts are deployed to the Sonatype OSS Nexus repository and automatically promoted. This will be
