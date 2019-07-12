@@ -9,15 +9,15 @@ assignees: ''
 
 ## Do the Release ([Full document](https://github.com/playframework/play-meta/blob/master/releasing/lagom.md))
 
-- [ ] [First-time Setup][]
-- [ ] [Review the Changes][]
-- [ ] [Before You Release][]
-  - [ ] [Triage issues][]
-- [ ] [Publish the Artifacts][]
-- [ ] [Update the Web Site][] <https://github.com/lagom/lagom.github.io/pull/???>
-- [ ] [Update the g8 templates and example projects][]
-- [ ] [Announce the Release][]
-- [ ] [After-Release Cleanup][]
+* [ ] [First-time Setup][]
+* [ ] [Review the Changes][]
+* [ ] [Before You Release][]
+  * [ ] [Triage issues][]
+* [ ] [Publish the Artifacts][]
+* [ ] [Update the Web Site][] <https://github.com/lagom/lagom.github.io/pull/???>
+* [ ] [Update the g8 templates and example projects][]
+* [ ] [Announce the Release][]
+* [ ] [After-Release Cleanup][]
 
 [First-time Setup]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#first-time-setup
 [Review the Changes]: https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#review-the-changes

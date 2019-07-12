@@ -11,41 +11,41 @@ assignees: ''
 
 Better to do this in advance:
 
-- [ ] Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one
-  - [ ] [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
-  - [ ] [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
-  - [ ] Akka Team
-- [ ] [Triage issues][]
+* [ ] Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one
+  * [ ] [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
+  * [ ] [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
+  * [ ] Akka Team
+* [ ] [Triage issues][]
 
 ## Do the Release ([Full document](https://github.com/playframework/play-meta/blob/master/releasing/play.md))
 
-- [ ] [Release projects that Play depends on][]
-  - [ ] release [play-json][]
-  - [ ] release [play-ws][]
-  - [ ] release [twirl][]
+* [ ] [Release projects that Play depends on][]
+  * [ ] release [play-json][]
+  * [ ] release [play-ws][]
+  * [ ] release [twirl][]
 
-- [ ] [Release Play itself][]
+* [ ] [Release Play itself][]
 
-- [ ] [Release external modules][]
-  - [ ] release [play-slick][]
-  - [ ] release [scalatestplus-play][]
-  - [ ] release [play-grpc][]
+* [ ] [Release external modules][]
+  * [ ] release [play-slick][]
+  * [ ] release [scalatestplus-play][]
+  * [ ] release [play-grpc][]
 
-- [ ] [Release omnidoc][]
+* [ ] [Release omnidoc][]
 
-- [ ] [Update the supported modules page][]
-- [ ] [Update playframework templates and seeds][]
-- [ ] [Update Example Code Service][]
-- [ ] [Update playframework.com][]
+* [ ] [Update the supported modules page][]
+* [ ] [Update playframework templates and seeds][]
+* [ ] [Update Example Code Service][]
+* [ ] [Update playframework.com][]
 
-- [ ] [Announce][]
-  - [ ] Write a blog post on <https://playframework.ghost.io/ghost/24> about the release.
-  - [ ] Write a topic on <https://discuss.lightbend.com/>
-  - [ ] Write a release on <https://github.com/playframework/playframework/releases>
-  - [ ] Send an internal email to eng-updates
-  - [ ] Tweet about the new release.
+* [ ] [Announce][]
+  * [ ] Write a blog post on <https://playframework.ghost.io/ghost/24> about the release.
+  * [ ] Write a topic on <https://discuss.lightbend.com/>
+  * [ ] Write a release on <https://github.com/playframework/playframework/releases>
+  * [ ] Send an internal email to eng-updates
+  * [ ] Tweet about the new release.
 
-- [ ] [Post release tasks][]
+* [ ] [Post release tasks][]
 
 [Triage issues]: https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+
 [Release projects that Play depends on]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
