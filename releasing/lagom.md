@@ -77,7 +77,7 @@ See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C
     * If it is a major or minor release, write [GitHub release notes](https://github.com/lagom/lagom/releases) with highlights, contributions, etc. (Use the authors list you created above). This is not necessary for patch releases
     * Update `currentLagomVersion`
     * If this is a MAJOR or MINOR version bump (RC or final), also update `currentDocsVersion`
-    * If this is a MILESTONE or RC, update `previewVersions`
+    * If this is a MILESTONE or RC, update `previewVersions` (note that preview versions may use [`latest`](https://github.com/lagom/lagom.github.io/pull/197/files) or [`x.y.x`](https://github.com/lagom/lagom.github.io/commit/f2e663e601675ce0649bb98da7c2fec44d038d92#diff-297d1fd6bd39f9975e6683c40f99fbd6) as alias depending on the existence of a [dedicated folder](https://github.com/lagom/lagom.github.io/tree/template/src/docs) for those docs). 
 
 ## Publish the Artifacts
 
