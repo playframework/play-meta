@@ -135,9 +135,9 @@ to find the most recent file to `tail` if you can to see what is happening.
 
 ### Docs
 
-* Reactive Platform "supported modules" page (sbt plugin & artifacts):
-    * <https://github.com/lightbend/reactive-platform-docs/blob/master/build.sbt#L92>
-    * <https://github.com/lightbend/reactive-platform-docs/blob/master/src/main/paradox/supported-modules/index.md>
+* Lightbend Platform ["Library build dependencies"](https://developer.lightbend.com/docs/lightbend-platform/introduction/getting-help/build-dependencies.html) page (sbt plugin & artifacts):
+    * <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/examples/build.sbt>
+    * <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
 
 ### Samples
 
