@@ -222,7 +222,7 @@ Once that is done, you can update the docs on playframework.com, by running: (us
 <https://github.com/playframework/play-generated-docs> and the tag id you want to create)
 
 ```bash
-./omnidoc/bin/deploy --branch <branch> --tag <tag> /home/play/deploy/play-generated-docs
+/home/play/deploy/omnidocDeploy --branch <branch> --tag <tag> /home/play/deploy/play-generated-docs
 ```
 
 Verification: check there is a new tag `<tag>` at <https://github.com/playframework/play-generated-docs> project. It
