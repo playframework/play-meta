@@ -330,6 +330,8 @@ it's up-to-date and works properly.
 
 ### Step 6 - Update playframework.com
 
+If you are releasing a MAJOR version, review the contents of [`.version` in `play-generated-docs`](https://github.com/playframework/play-generated-docs/blob/master/.version) before  updating the site.
+
 Update `playReleases.json` and `changelog.md` in [playframework.com website git repository](https://github.com/playframework/playframework.com/).
 
 Note that the changelog should be updated describing all milestone/release candidates for the same release
