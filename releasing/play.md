@@ -48,11 +48,11 @@ multiple projects.  Each project needs to be released individually, and does not
 re-released every time Play itself is released.  When cutting a release of Play, you need to make the following
 decisions:
 
-* Does this release of Play require releasing the modules that depend on it, eg play-grpc and play-slick.  For
+- Does this release of Play require releasing the modules that depend on it, eg play-grpc and play-slick.  For
   a typical minor release, it would not.  For a major release, and often for pre releases of major releases, the
   answer is yes.
 
-* Does this release of Play require updating the activator templates?  If it is the latest stable release that
+- Does this release of Play require updating the activator templates?  If it is the latest stable release that
   you are releasing, then yes.  Specifically, if the current stable release is 2.3.8, and you're releasing
   2.3.9, then you need to publish the templates, but if you're releasing 2.2.7, then you must not publish the
   templates, since doing so will revert the Play seed templates back to 2.2 when they should be on 2.3.
@@ -90,11 +90,11 @@ commands.
 
 Prepare the branch for each project:
 
-* Look for PRs that should be merged.
-* Look at `status:needs-backport` issues/PRs (including closed ones).
-* Look at issues/PRs tagged milestone version (including closed ones).
-* Update any dependencies that are needed.
-* Update any upstream projects (e.g make sure new play-ws is using new play-json)
+- Look for PRs that should be merged.
+- Look at `status:needs-backport` issues/PRs (including closed ones).
+- Look at issues/PRs tagged milestone version (including closed ones).
+- Update any dependencies that are needed.
+- Update any upstream projects (e.g make sure new play-ws is using new play-json)
 
 May need to release these projects: play-json, play-ws, twirl
 
@@ -105,14 +105,16 @@ cd deploy
 ./release --project <project> --branch <branch>
 ```
 
+> Note: `play-ws` is already using [sbt-dynver](https://github.com/dwijnand/sbt-dynver), so when realising it you need to pass `tag` parameter, for example: `./release --project <project> --branch <branch> --tag vX.Y.Z`. Version must be prefixed by `v`.
+
 ### Step 1 - release Play itself
 
 Prepare the branch:
 
-* Look for PRs that should be merged.
-* Look at [`status:needs-backport`](https://github.com/playframework/playframework/issues?utf8=%E2%9C%93&q=label%3Astatus%3Aneeds-backport+) issues/PRs (including closed ones). If you are releasing an older version of Play, look at the `status:needs-backport-x.x` label too.
-* Look at issues/PRs tagged milestone version (including closed ones).
-* Updated any dependencies that are needed (e.g. Dependencies.scala)
+- Look for PRs that should be merged.
+- Look at [`status:needs-backport`](https://github.com/playframework/playframework/issues?utf8=%E2%9C%93&q=label%3Astatus%3Aneeds-backport+) issues/PRs (including closed ones). If you are releasing an older version of Play, look at the `status:needs-backport-x.x` label too.
+- Look at issues/PRs tagged milestone version (including closed ones).
+- Updated any dependencies that are needed (e.g. Dependencies.scala)
 
 When ready:
 
@@ -141,9 +143,9 @@ will be broken until you release Omnidoc few steps down this document.
 
 This includes the modules:
 
-* play-slick
-* scalatestplus-play
-* play-grpc
+- play-slick
+- scalatestplus-play
+- play-grpc
 
 Only release these if they need to be
 released, generally for minor Play releases, there's no reason to cut a new release of these, these libraries
@@ -156,8 +158,8 @@ modules directly to update dependencies.
 You may need to bump the Play version in the external module, do this, commit, and depending on how major the
 version bump is, push directly to the repo or go through a pull request.  Once that is done, to release:
 
-* play-slick
-* scalatestplus-play
+- play-slick
+- scalatestplus-play
 
 Run the `release` script on vegemite:
 
@@ -179,9 +181,9 @@ for Play 2.6.3 artifacts:
 **Verification**: You can check that the artifacts are available at Maven Central under
 play-slick_\<scalaversion\>, etc.
 
-* <https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.12/>
-* <https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/>
-* <https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.12/>
+- <https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.13/>
+- <https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/>
+- <https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.13/>
 
 **Verification**: when you run sbt new playframework/play-{scala,java}-seed.g8 it should pick up the new version
 on Maven. Try the templates out. You may need to update them (possibly with templatecontrol?) if they don't work
@@ -211,9 +213,11 @@ These changes can generally be pushed directly to GitHub.
 To release omnidoc:
 
 ```bash
-cd deploy
-./release --project omnidoc --branch <branch>
+cd deploy/omnidoc
+sbt 'release cross'
 ```
+
+> Note: omnidoc does not have a `version.sbt` file and also does not use sbt-dynver. It gets its version from Play, so you must release using `sbt 'release cross'`.
 
 **Verification**: check that the artifacts are available at Maven Central under play-omnidoc_<scalaversion>. It
 may take a few minutes. <https://repo1.maven.org/maven2/com/typesafe/play/>
@@ -235,9 +239,9 @@ pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
 
 #### Docs
 
-* Lightbend Platform ["Library build dependencies"](https://developer.lightbend.com/docs/lightbend-platform/introduction/getting-help/build-dependencies.html) page (sbt plugin & artifacts):
-  * <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/examples/build.sbt>
-  * <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
+- Lightbend Platform ["Library build dependencies"](https://developer.lightbend.com/docs/lightbend-platform/introduction/getting-help/build-dependencies.html) page (sbt plugin & artifacts):
+  - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/examples/build.sbt>
+  - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
 
 #### Other
 
