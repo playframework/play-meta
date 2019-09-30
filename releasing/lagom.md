@@ -72,8 +72,8 @@ See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C
   there aren't any unresolved issues scheduled for the release, and close the milestone if it's complete
 * Compare the GitHub milestone with the commits on the branch you are releasing using the instructions in
   "Reviewing the Changes" above. This way you can make sure the GH milestone lists the correct information.
-* Ensure that the branch has a green build in [Travis CI](https://travis-ci.org/lagom/lagom/branches)
-* Create a pull request against the project with changes for the release:
+* Ensure that the branch has a green build in [Travis CI](https://travis-ci.com/lagom/lagom/branches)
+* Create a pull request against the lagom.github.io repo with changes for the release:
     * If it is a major or minor release, write [GitHub release notes](https://github.com/lagom/lagom/releases) with highlights, contributions, etc. (Use the authors list you created above). This is not necessary for patch releases
     * Update `currentLagomVersion`
     * If this is a MAJOR or MINOR version bump (RC or final), also update `currentDocsVersion`
@@ -115,7 +115,7 @@ propagates changes you won't be able to test.
 Verify the release:
 
 * <https://bintray.com/lagom/sbt-plugin-releases/lagom-sbt-plugin/> must contain your version and be deployed using
-  the **SBT_LAYOUT** (such as `scala_{versions}/sbt_{versions}/1.4.7`)
+  sbt's ivy pattern (such as `scala_{versions}/sbt_{versions}/1.4.7`)
 * <https://repo1.maven.org/maven2/com/lightbend/lagom/> must contain all the other artifacts for the new version.
 
 ## Update the Web Site
