@@ -194,10 +194,11 @@ with the new version of Play.
 **Warning**: this is a compulsory step and the version vX.Y.Z of omnidoc released here must match the version
 vX.Y.Z of Play released in step 1 above. There's a circular dependency.
 
-Omnidoc builds Play's documentation from all the current versions of Play and its modules.  The first step you
-need to take is to update the versions in the omnidoc build file for the branch of Play that you are releasing.
-Update the Play version to the version of Play that you just released, and also update any external modules to
-their latest version that is compatible with that version of Play.
+Omnidoc builds Play's documentation from all the current versions of Play and its modules.
+In the omnidoc build file for the branch of Play that you are releasing:
+
+1 Update the Play version to the version of Play that you just released, and also
+2. Update any external modules to their latest version that is compatible with that version of Play.
 
 Here's an example update to the omnidoc 2.4.x branch.
 
@@ -214,6 +215,10 @@ To release omnidoc:
 
 ```bash
 cd deploy/omnidoc
+# make sure you're on the right branch
+git checkout master
+# make sure you have all upstream changes
+git pull --ff-only
 sbt 'release cross'
 ```
 
