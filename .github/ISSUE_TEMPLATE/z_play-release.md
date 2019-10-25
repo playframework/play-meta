@@ -22,24 +22,24 @@ Better to do this in advance:
 * [ ] [Release projects that Play depends on][]
   * [ ] release [play-json][]
     * [ ] Look for [PRs][play-json/prs] that should be merged.
-    * [ ] Look at [`status:needs-backport` issues/PRs][play-json/ports] (including closed ones).
+    * [ ] Look at [`status:needs-backport`][play-json/backport], [`status:needs-forwardport`][play-json/forwardport] issues/PRs (including closed ones).
     * [ ] Look at issues/PRs tagged [milestone][play-json/milestones] version (including closed ones).
     * [ ] Update any dependencies that are needed. (e.g JDK, Scala)
   * [ ] release [play-ws][]
     * [ ] Look for [PRs][play-ws/prs] that should be merged.
-    * [ ] Look at [`status:needs-backport` issues/PRs][play-ws/ports] (including closed ones).
+    * [ ] Look at [`status:needs-backport`][play-ws/backport], [`status:needs-forwardport`][play-ws/forwardport] issues/PRs (including closed ones).
     * [ ] Look at issues/PRs tagged [milestone][play-ws/milestones] version (including closed ones).
     * [ ] Update any dependencies that are needed. (e.g JDK, Scala)
     * [ ] Make sure play-ws uses new play-json
   * [ ] release [twirl][]
     * [ ] Look for [PRs][twirl/prs] that should be merged.
-    * [ ] Look at [`status:needs-backport` issues/PRs][twirl/ports] (including closed ones).
+    * [ ] Look at [`status:needs-backport`][twirl/backport], [`status:needs-forwardport`][twirl/forwardport], [`status:needs-backport-1.3`][twirl/backport-1.3] issues/PRs (including closed ones).
     * [ ] Look at issues/PRs tagged [milestone][twirl/milestones] version (including closed ones).
     * [ ] Update any dependencies that are needed. (e.g JDK, Scala)
 
 * [ ] [Release Play itself][]
     * [ ] Look for [PRs][play/prs] that should be merged.
-    * [ ] Look at [`status:needs-backport` issues/PRs][play/ports] (including closed ones).
+    * [ ] Look at [`status:needs-backport`][play/backport], [`status:needs-forwardport`][play/forwardport], [`status:needs-backport-2.6`][play/backport-2.6] issues/PRs (including closed ones).
     * [ ] Look at issues/PRs tagged [milestone][play/milestones] version (including closed ones).
     * [ ] Update any dependencies that are needed. (e.g JDK, Scala)
     * [ ] Make sure play uses new play-json, play-ws, twirl
@@ -84,18 +84,24 @@ Better to do this in advance:
 [scalatestplus-play]: https://github.com/playframework/scalatestplus-play
 [twirl]: https://github.com/playframework/twirl
 
-[play-json/prs]: https://github.com/playframework/play-json/pulls
-[play-json/ports]: https://github.com/playframework/play-json/pulls?q=label%3Astatus%3Aneeds-backport+label%3Astatus%3Aneeds-backport-2.6+label%3Astatus%3Aneeds-forwardport+sort%3Aupdated-desc
-[play-json/milestones]: https://github.com/playframework/play-json/milestones?direction=asc&sort=due_date
+[play-json/prs]:         https://github.com/playframework/play-json/pulls
+[play-json/backport]:    https://github.com/playframework/play-json/labels/status%3Aneeds-backport
+[play-json/forwardport]: https://github.com/playframework/play-json/labels/status%3Aneeds-forwardport
+[play-json/milestones]:  https://github.com/playframework/play-json/milestones?direction=asc&sort=due_date
 
-[play-ws/prs]: https://github.com/playframework/play-ws/pulls
-[play-ws/ports]: https://github.com/playframework/play-ws/pulls?q=label%3Astatus%3Aneeds-backport+label%3Astatus%3Aneeds-backport-1.1+label%3Astatus%3Aneeds-forwardport+sort%3Aupdated-desc
-[play-ws/milestones]: https://github.com/playframework/play-ws/milestones?direction=asc&sort=due_date
+[play-ws/prs]:         https://github.com/playframework/play-ws/pulls
+[play-ws/backport]:    https://github.com/playframework/play-ws/labels/status%3Aneeds-backport
+[play-ws/forwardport]: https://github.com/playframework/play-ws/labels/status%3Aneeds-forwardport
+[play-ws/milestones]:  https://github.com/playframework/play-ws/milestones?direction=asc&sort=due_date
 
-[twirl/prs]: https://github.com/playframework/twirl/pulls
-[twirl/ports]: https://github.com/playframework/twirl/pulls?q=label%3Astatus%3Aneeds-backport+label%3Astatus%3Aneeds-backport-1.3+label%3Astatus%3Aneeds-forwardport+sort%3Aupdated-desc
-[twirl/milestones]: https://github.com/playframework/twirl/milestones?direction=asc&sort=due_date
+[twirl/prs]:          https://github.com/playframework/twirl/pulls
+[twirl/backport]:     https://github.com/playframework/twirl/labels/status%3Aneeds-backport
+[twirl/forwardport]:  https://github.com/playframework/twirl/labels/status%3Aneeds-forwardport
+[twirl/backport-1.3]: https://github.com/playframework/twirl/labels/status%3Aneeds-backport-1.3
+[twirl/milestones]:   https://github.com/playframework/twirl/milestones?direction=asc&sort=due_date
 
-[play/prs]: https://github.com/playframework/playframework/pulls
-[play/ports]: https://github.com/playframework/playframework/pulls?q=label%3Astatus%3Aneeds-backport+label%3Astatus%3Aneeds-backport-2.6+label%3Astatus%3Aneeds-forwardport+sort%3Aupdated-desc
-[play/milestones]: https://github.com/playframework/playframework/milestones?direction=asc&sort=due_date
+[play/prs]:          https://github.com/playframework/playframework/pulls
+[play/backport]:     https://github.com/playframework/playframework/labels/status%3Aneeds-backport
+[play/forwardport]:  https://github.com/playframework/playframework/labels/status%3Aneeds-forwardport
+[play/backport-2.6]: https://github.com/playframework/playframework/labels/status%3Aneeds-backport-2.6
+[play/milestones]:   https://github.com/playframework/playframework/milestones?direction=asc&sort=due_date
