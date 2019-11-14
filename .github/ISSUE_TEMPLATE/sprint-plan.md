@@ -7,6 +7,12 @@ assignees: ''
 
 ---
 
+#### Meta TODOs
+
+* [ ] Tweet (& blog?) about anything in the last sprint or this sprint?  E.g: noteworthy PRs or upcoming tasks.
+
+---
+
 * [ ]
 * [ ]
 * [ ]
