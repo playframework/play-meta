@@ -12,6 +12,7 @@ assignees: ''
 * [ ] [First-time Setup][]
 * [ ] [Review the Changes][]
 * [ ] [Before You Release][]
+  * [ ] run `validateDependencies` on the branch and update all dependencies accordingly - send a PR for it
   * [ ] [Triage issues][]
 * [ ] [Publish the Artifacts][]
 * [ ] [Update the Web Site][] <https://github.com/lagom/lagom.github.io/pull/???>
