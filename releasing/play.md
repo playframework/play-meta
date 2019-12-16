@@ -248,6 +248,9 @@ pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
   - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/examples/build.sbt>
   - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
 
+* If this a major release, then a New EOL cycle starts and we must update:
+    * <https://github.com/lightbend/together-portal/blob/8d23a16ad52eac32d8dfd073dafe90d96e530853/app/models/Product.scala#L109-L131>
+
 #### Other
 
 The "core" playframework templates describe Play's overall feature set -- they are maintained by the Play team

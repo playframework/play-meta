@@ -139,31 +139,19 @@ to find the most recent file to `tail` if you can to see what is happening.
     * <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/examples/build.sbt>
     * <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
 
+* If this a major release, then a New EOL cycle starts and we must update:
+    * <https://github.com/lightbend/together-portal/blob/8d23a16ad52eac32d8dfd073dafe90d96e530853/app/models/Product.scala#L109-L131>
+
 ### Samples
 
 * `g8` templates
     * <https://github.com/lagom/lagom-scala.g8/blob/master/src/main/g8/project/plugins.sbt>
     * <https://github.com/lagom/lagom-java.g8/blob/master/src/main/g8/project/plugins.sbt>
-* Chirper (Maven & sbt):
-    * <https://github.com/lagom/lagom-java-sbt-chirper-example/blob/1.5.x/project/plugins.sbt#L1>
-    * <https://github.com/lagom/lagom-java-maven-chirper-example/blob/1.5.x/pom.xml#L186>
-* Online Auction
-    * <https://github.com/lagom/online-auction-java/blob/1.5.x/project/plugins.sbt>
-    * <https://github.com/lagom/online-auction-scala/blob/1.5.x/project/plugins.sbt>
-* gRPC-samples
-    * https://github.com/lagom/lagom-scala-grpc-example/blob/1.5.x/project/plugins.sbt#L2
-    * https://github.com/lagom/lagom-java-grpc-example/blob/1.5.x/project/plugins.sbt#L2
+* Samples:
+    * <https://github.com/lagom/lagom-samples>
 * OpenShift smoketests
-    * https://github.com/lagom/lagom-scala-openshift-smoketests/blob/1.5.x/project/plugins.sbt#L2
-    * https://github.com/lagom/lagom-java-openshift-smoketests/blob/1.5.x/pom.xml#L129
-* Shopping Cart
-    * https://github.com/lagom/shopping-cart-scala/blob/1.5.x/project/plugins.sbt#L2
-    * https://github.com/lagom/shopping-cart-java/blob/1.5.x/project/plugins.sbt#L2
-    * https://github.com/lagom/shopping-cart-java/blob/1.5.x/pom.xml#L182
-
-* We also have examples in <https://github.com/lagom/ibm-integration-examples> and
-  <https://github.com/lagom/lagom-recipes>. We will not try to update these on every release, but may choose to do
-  so on a case-by-case basis for more significant releases.
+    * https://github.com/lagom/lagom-scala-openshift-smoketests/blob/1.6.x/project/plugins.sbt#L2
+    * https://github.com/lagom/lagom-java-openshift-smoketests/blob/1.6.x/pom.xml#L129
   
 ## Announce the Release
 
