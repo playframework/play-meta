@@ -18,6 +18,10 @@
       - [Other](#other)
     - [Step 5 - Update Example Code Service](#step-5---update-example-code-service)
     - [Step 6 - Update playframework.com](#step-6---update-playframeworkcom)
+      - [Update `.version` in `play-generated-docs`](#update-version-in-play-generated-docs)
+      - [Update `playReleases.json` and `changelog.md`](#update-playreleasesjson-and-changelogmd)
+      - [Update versions for Example Code Service](#update-versions-for-example-code-service)
+      - [Deploy the website changes](#deploy-the-website-changes)
     - [Step 7 - Announce](#step-7---announce)
     - [Step 8 - Post release tasks](#step-8---post-release-tasks)
 
@@ -342,7 +346,13 @@ it's up-to-date and works properly.
 
 ### Step 6 - Update playframework.com
 
+These are the steps to update <https://playframework.com> website.
+
+#### Update `.version` in `play-generated-docs`
+
 If you are releasing a MAJOR version, review the contents of [`.version` in `play-generated-docs`](https://github.com/playframework/play-generated-docs/blob/master/.version) before  updating the site.
+
+#### Update `playReleases.json` and `changelog.md`
 
 Update `playReleases.json` and `changelog.md` in [playframework.com website git repository](https://github.com/playframework/playframework.com/).
 
@@ -350,6 +360,8 @@ Note that the changelog should be updated describing all milestone/release candi
 collectively. In addition the `playReleases.json` should be updated with the development releases in place i.e.
 you don't need to publish information on both an M1 and an M2 release.  If the release is for the latest stable
 or development version, upgrade the website itself to use that version.
+
+#### Update versions for Example Code Service
 
 You will also want to check that the downloads page has the right branch tag (i.e. 2.7.x) for the example code
 service branches that you just updated.  This is defined in playframework/playframework.com, under the
@@ -362,6 +374,8 @@ examples.playVersions = [ "2.7.x", "2.6.x" ]
 **Verification**: Run playframework.com locally on your machine and check the /download and /changelog pages.
 
 Check that you have the right version numbers and that kickstartr / example-code-service is up to date.
+
+#### Deploy the website changes
 
 Commit and push your changes.
 
@@ -386,22 +400,22 @@ ssh into `ubuntu@www.playframework.com`, and run `./deploy.sh`
 
 ### Step 7 - Announce
 
-* If it is a major or minor release, write a blog post on <https://playframework.ghost.io/ghost/24/> about the release (not necessary for patch releases).
-* Write a topic on <https://discuss.lightbend.com/>
-* Write a release on <https://github.com/playframework/playframework/releases>
-* Send an internal email to eng-updates
-* Tweet about the new release.
+1. If it is a major or minor release, write a blog post on <https://playframework.ghost.io/ghost/24/> about the release (not necessary for patch releases).
+1. Write a topic on <https://discuss.lightbend.com/>
+1. Write a release on <https://github.com/playframework/playframework/releases>
+1. Send an internal email to eng-updates
+1. Tweet about the new release.
 
 **Tip**: To get a list of authors:
 
 ```bash
-git fetch --tags && git shortlog -s 2.7.1..2.7.2 | cut -c8- | sort
+git fetch --tags && git shortlog -s 2.8.1..2.8.2 | cut -c8- | sort
 ```
 
 **Verification**: Go to <https://discuss.lightbend.com/> and <https://twitter.com/playframework> look for the message and tweet.
 
 ### Step 8 - Post release tasks
 
-1. Close the milestone for the release (for example 2.7.1)
-2. Create a new milestone for the next release (for example 2.7.2)
+1. Close the milestone for the release (for example 2.8.1)
+2. Create a new milestone for the next release (for example 2.8.2)
 3. Move issues and pull requests from the old milestone to the new one if necessary
