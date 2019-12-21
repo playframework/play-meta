@@ -54,7 +54,12 @@ Better to do this in advance:
 * [ ] [Update the supported modules page][]
 * [ ] [Update playframework templates and seeds][]
 * [ ] [Update Example Code Service][]
+
 * [ ] [Update playframework.com][]
+  * [ ] [Update `.version` in `play-generated-docs`][]
+  * [ ] [Update `playReleases.json` and `changelog.md`][]
+  * [ ] [Update versions for Example Code Service][]
+  * [ ] [Deploy the website changes][]
 
 * [ ] [Announce][]
   * [ ] Write a blog post on <https://playframework.ghost.io/ghost/24> about the release.
@@ -74,6 +79,10 @@ Better to do this in advance:
 [Update playframework templates and seeds]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-4---update-playframework-templates-and-seeds
 [Update Example Code Service]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-5---update-example-code-service
 [Update playframework.com]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-6---update-playframeworkcom
+[Update `.version` in `play-generated-docs`]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#update-version-in-play-generated-docs
+[Update `playReleases.json` and `changelog.md`]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#update-playreleasesjson-and-changelogmd
+[Update versions for Example Code Service]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#update-versions-for-example-code-service
+[Deploy the website changes]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#deploy-the-website-changes
 [Announce]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-7---announce
 [Post release tasks]: https://github.com/playframework/play-meta/blob/master/releasing/play.md#step-8---post-release-tasks
 
