@@ -106,10 +106,10 @@ When ready:
 
 ```bash
 cd deploy
-./release --project <project> --branch <branch>
+./release --project <project> --branch <branch> --tag <new-tag>
 ```
 
-> Note: `play-ws` is already using [sbt-dynver](https://github.com/dwijnand/sbt-dynver), so when realising it you need to pass `tag` parameter, for example: `./release --project <project> --branch <branch> --tag vX.Y.Z`. Version must be prefixed by `v`.
+> NOTE: --tag <new-tag> is meant for branches already using sbt-dynver. Other branches have the legacy release settings which expect a version.sbt and handle tagging.
 
 ### Step 1 - release Play itself
 
@@ -169,8 +169,10 @@ Run the `release` script on vegemite:
 
 ```bash
 cd deploy
-./release --project <project> --branch <branch>
+./release --project <project> --branch <branch>  --tag <new-tag>
 ```
+
+> NOTE: --tag <new-tag> is meant for branches already using sbt-dynver. Other branches have the legacy release settings which expect a version.sbt and handle tagging.
 
 Where project is, for example, scalatestplus-play, play-slick,...
 
