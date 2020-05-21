@@ -47,10 +47,7 @@ Create a new [release tracking issue][].
 
 ## Intro
 
-Play 2.4 introduced a much more modular setup for the Play modules and documentation, where modules now span
-multiple projects.  Each project needs to be released individually, and does not necessarily need to be
-re-released every time Play itself is released.  When cutting a release of Play, you need to make the following
-decisions:
+When cutting a release of Play, you need to make the following decisions:
 
 - Does this release of Play require releasing the modules that depend on it, eg play-grpc and play-slick.  For
   a typical minor release, it would not.  For a major release, and often for pre releases of major releases, the
@@ -124,24 +121,28 @@ When ready:
 
 ```bash
 cd deploy
-./release --branch <branch>
+./release --project playframework --branch <branch> --tag <new-tag>
 ```
 
-Where branch is the branch of Play that you want to release, eg 2.7.x.  You will be prompted for the version
+Where branch is the branch of Play that you want to release, eg 2.7.x. `master` and `2.8.x` already use `dynver` so 
+you must use the `--tag` argument. For `2.7.x` will be prompted for the version
 number and the next version number.  For minor releases, the default should usually be appropriate.
 
 Once Play is released, you need to wait 10 minutes or so for a Maven central sync before you can perform any of
 the remaining tasks.
 
 **Verification**: You can check that the artifacts are available at Maven Central under play_\<scalaversion>.
-<https://repo1.maven.org/maven2/com/typesafe/play/>
+<https://repo1.maven.org/maven2/com/typesafe/play/>. You can see the staged artifacts here on OSS Sonatype. E.g. here is a search
+for Play 2.8.2 artifacts:
+<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.2~~>
+
 
 **Warning**: the play release will create a tag on the repository and push it to GitHub. That will trigger one
-or two travis jobs that are granted to fail. The reason of the failure is a circular dependency with Omnidoc.
-Play vX.Y.Z uses Omnidoc vX.Y.Z so those two travis jobs triggered by the tag and the changes in version.sbt
-will be broken until you release Omnidoc few steps down this document.
+or two travis jobs. These jobs will fail for `2.7.x` (not on other branches). The reason of the failure is a 
+circular dependency with Omnidoc. 
 
-**Warning**: If you are releasing a major version of Play which requires a new branch, for example, 2.7.0, you also need to configure MiMa before merging new features at this new branch. Ideally, do this as part of the release process.
+**Warning**: If you are releasing a major version of Play which requires a new branch, for example, 2.9.0, 
+you also need to configure MiMa before merging new features at this new branch. Ideally, do this as part of the release process.
 
 ### Step 2 - release external modules
 
@@ -181,8 +182,8 @@ procedure.
 
 Again, you will need to wait 10 minutes or so for a Maven central sync before you can perform any of the
 remaining tasks. In the meantime you can see the staged artifacts here on OSS Sonatype. E.g. here is a search
-for Play 2.6.3 artifacts:
-<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.7.0~~>
+for Play 2.8.2 artifacts:
+<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.2~~>
 
 **Verification**: You can check that the artifacts are available at Maven Central under
 play-slick_\<scalaversion\>, etc.
@@ -192,18 +193,21 @@ play-slick_\<scalaversion\>, etc.
 - <https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.13/>
 
 **Verification**: when you run sbt new playframework/play-{scala,java}-seed.g8 it should pick up the new version
-on Maven. Try the templates out. You may need to update them (possibly with templatecontrol?) if they don't work
+on Maven. Try the templates out. You may need to update them if they don't work
 with the new version of Play.
 
 ### Step 3 - release omnidoc
 
-**Warning**: this is a compulsory step and the version vX.Y.Z of omnidoc released here must match the version
-vX.Y.Z of Play released in step 1 above. There's a circular dependency.
+**Warning**: this is a compulsory step and the version X.Y.Z of omnidoc released here must match the version
+X.Y.Z of Play released in step 1 above.
 
-Omnidoc builds Play's documentation from all the current versions of Play and its modules.
+Omnidoc builds Play's documentation from all the current versions of Play and its modules. To understand
+what omnidoc really does under the covers, read the [README](https://github.com/playframework/omnidoc/blob/master/README.md). Note
+that once omnidoc completed, you will have the docs on the machine where you run the command and you still 
+need to push them to `play-generated-docs` (next step).
 In the omnidoc build file for the branch of Play that you are releasing:
 
-1 Update the Play version to the version of Play that you just released, and also
+1. Update the Play version to the version of Play that you just released, and also
 2. Update any external modules to their latest version that is compatible with that version of Play.
 
 Here's an example update to the omnidoc 2.4.x branch.
@@ -222,7 +226,7 @@ To release omnidoc:
 ```bash
 cd deploy/omnidoc
 # make sure you're on the right branch
-git checkout master
+git checkout 2.4.x
 # make sure you have all upstream changes
 git pull --ff-only
 sbt 'release cross'
@@ -246,6 +250,8 @@ tagged version of the generated docs up to 10 minutes later. You can check that 
 pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
 <https://www.playframework.com/documentation/2.7.2/Home>.
 
+The 10-minute refresh [doesn't currently work](https://github.com/playframework/playframework.com/issues/382).
+
 ### Step 4 - update playframework templates and seeds
 
 #### Docs
@@ -255,58 +261,11 @@ pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
   - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
 
 * If this a major release, then a New EOL cycle starts and we must update:
-    * <https://github.com/lightbend/together-portal/blob/8d23a16ad52eac32d8dfd073dafe90d96e530853/app/models/Product.scala#L109-L131>
+    * <https://github.com/lightbend/together-portal/blob/master/app/models/Product.scala#L109-L131>
 
-#### Other
+#### `play-samples`
 
-The "core" playframework templates describe Play's overall feature set -- they are maintained by the Play team
-and in the <https://github.com/playframework/> GitHub organisation.  Historically, there were issues with out of date Activator
-templates, and confusion between what was supported and current, and what was third-party and out of date.
-
-The sample templates are run through <https://github.com/playframework/templatecontrol> -- this contains a list of
-the example projects and seeds.
-
-Running TemplateControl will look for version numbers and automatically create a pull request with any needed
-upgrades.  It's safe to run, but you will need local forks of all the template projects: see
-<https://github.com/lightbend/templatecontrol/blob/master/scripts/README.md>.
-
-Create a PR from the version you want so that your changes are captured. For example:
-
-```bash
-git checkout -b upgrade-2.7.2
-vim src/main/resources/<play-branch-name>.conf
-```
-
-After updating the `.conf` files, commit and push your changes, submit a new pull request to templatecontrol
-project, merge it and then run templatecontrol:
-
-Note the prerequisites detailed in <https://github.com/playframework/templatecontrol#prerequisites>.
-
-```bash
-sbt run
-```
-
-**Verification**: Check out a local copy of play-scala-starter-example and play-java-starter-example locally and
-smoke test them locally:
-
-1. $ git clone https://github.com/<yourname>/play-samples.git
-2. $ cd play-samples
-3. $ git fetch origin templatecontrol-2.7.x
-4. $ git checkout templatecontrol-2.7.x
-5. $ git diff HEAD^
-6. $ cd play-scala-starter-example
-7. $ sbt
-8. \> show dependencyClasspath
-9. \> test
-10. \> run
-
-Once you're done, commit your changes and merge the updated version into the project:
-
-```bash
-git commit -am "upgrade section to play 2.7.2"
-git push origin upgrade-2.7.2
-hub pull-request --browse
-```
+Update the Play version (and other released artifacts) in any of the example projects in https://github.com/playframework/play-samples
 
 So that everything is up to date.
 
@@ -315,9 +274,19 @@ So that everything is up to date.
 There is an integration through webhook to example-code-service: see
 <https://github.com/lightbend/example-code-service/> for what is on their end for packaging `./sbt` in a zip file.
 
+#### `play-seeds`
+
+Bump the version you're releasing in the approriate branch of the seeds. E.g. if you are releasing `2.8.5` edit:
+
+https://github.com/playframework/play-scala-seed.g8/blob/2.8.x/src/main/g8/project/plugins.sbt
+
+https://github.com/playframework/play-java-seed.g8/blob/2.8.x/src/main/g8/project/plugins.sbt
+
 ### Step 5 - Update Example Code Service
 
-The Example Code Service will need to be updated to point to the new versions.  All the play templates are in
+This step is only required when releasing a new major version.
+
+The Example Code Service will need to be updated to point to the new versions.  All the play samples are in
 play-templates.conf:
 
 <https://github.com/lightbend/example-code-service/blob/master/example-code-service/conf/play-templates.conf>
