@@ -336,7 +336,7 @@ or development version, upgrade the website itself to use that version.
 
 You will also want to check that the downloads page has the right branch tag (i.e. 2.7.x) for the example code
 service branches that you just updated.  This is defined in playframework/playframework.com, under the
-application.conf setting:
+`application.conf` setting:
 
 ```conf
 examples.playVersions = [ "2.7.x", "2.6.x" ]
@@ -367,11 +367,10 @@ To set up your public key:
 
 ssh into `ubuntu@www.playframework.com`, and run `./deploy.sh`
 
-**Verification**: Check that <https://www.playframework.com/download#alternatives> contains the new release.
+**Verification**: Check that <https://www.playframework.com/changelog> contains the new release.  
 
 ### Step 7 - Announce
 
-1. If it is a major or minor release, write a blog post on <https://playframework.ghost.io/ghost/24/> about the release (not necessary for patch releases).
 1. Write a topic on <https://discuss.lightbend.com/>
 1. Write a release on <https://github.com/playframework/playframework/releases>
 1. Send an internal email to eng-updates
