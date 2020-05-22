@@ -141,7 +141,8 @@ for Play 2.8.2 artifacts:
 or two travis jobs. These jobs will fail for `2.7.x` (not on other branches). The reason of the failure is a 
 circular dependency with Omnidoc. 
 
-**Warning**: If you are releasing a major version of Play which requires a new branch, for example, 2.9.0, 
+**Warning**: If you are releasing a version of Play which requires a new branch (for example a fix on an old, 
+still supported version that  doesn't have it's own stable branch),
 you also need to configure MiMa before merging new features at this new branch. Ideally, do this as part of the release process.
 
 ### Step 2 - release external modules
