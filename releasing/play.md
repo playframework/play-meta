@@ -257,9 +257,11 @@ The 10-minute refresh [doesn't currently work](https://github.com/playframework/
 
 #### Docs
 
-- Lightbend Platform ["Library build dependencies"](https://developer.lightbend.com/docs/lightbend-platform/introduction/getting-help/build-dependencies.html) page (sbt plugin & artifacts):
-  - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/examples/build.sbt>
-  - <https://github.com/lightbend/lightbend-platform-docs/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
+- Lightbend Platform ["Library build dependencies"](https://developer.lightbend.com/docs/lightbend-platform/introduction/getting-help/build-dependencies.html) pages. You have to update the version for the sbt plugins and the artifacts. These version strings may be in up to four different locations (maybe more?):
+  - <https://github.com/lightbend/lightbend-technology-intro-doc/blob/master/docs/modules/getting-help/examples/build.sbt>
+  - <https://github.com/lightbend/lightbend-technology-intro-doc/blob/master/docs/modules/getting-help/pages/build-dependencies.adoc>
+  - <https://github.com/lightbend/lightbend-technology-intro-doc/blob/master/site.yml>
+  - <https://github.com/lightbend/lightbend-technology-intro-doc/blob/master/author-mode-site.yml>
 
 * If this a major release, then a New EOL cycle starts and we must update:
     * <https://github.com/lightbend/together-portal/blob/master/app/models/Product.scala#L109-L131>
