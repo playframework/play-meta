@@ -81,6 +81,8 @@ See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C
 
 ## Publish the Artifacts
 
+**WARNING**: during the execution of `deploy/release` you may get the error message `[error] gpg: gpg-agent is not available in this session`. It is possible that the `gpg-agent` is indeed not available (use `sudo apt-get install gnupg-agent` to install it) but even if the `gpg-agent` is installed the error may appear. It is safe to ignore: we've run successful releases were all necessary signatures were produced (and Sonatype valited them) that still displayed the `[error] gpg: gpg-agent is not available in this session` error message.
+
 ssh into `vegemite` and run:
 
     screen -r # try reconnecting to an existing, detached session; to force detach add -d, otherwise:
