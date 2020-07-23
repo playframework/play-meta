@@ -132,8 +132,8 @@ to find the most recent file to `tail` if you can to see what is happening.
 
 ### Downstream
 
-* https://github.com/playframework/play-grpc/blob/master/project/Dependencies.scala#L14
-* https://github.com/akka/akka-persistence-couchbase/blob/master/project/Dependencies.scala#L14
+* <https://github.com/playframework/play-grpc/blob/master/project/Dependencies.scala#L20>
+* <https://github.com/akka/akka-persistence-couchbase/blob/master/project/Dependencies.scala#L15>
 
 ### Docs
 
@@ -152,8 +152,8 @@ to find the most recent file to `tail` if you can to see what is happening.
 * Samples:
     * <https://github.com/lagom/lagom-samples>
 * OpenShift smoketests
-    * https://github.com/lagom/lagom-scala-openshift-smoketests/blob/1.6.x/project/plugins.sbt#L2
-    * https://github.com/lagom/lagom-java-openshift-smoketests/blob/1.6.x/pom.xml#L129
+    * <https://github.com/lagom/lagom-scala-openshift-smoketests/blob/1.6.x/project/plugins.sbt#L2>
+    * <https://github.com/lagom/lagom-java-openshift-smoketests/blob/1.6.x/pom.xml#L129>
   
 ## Announce the Release
 
@@ -176,7 +176,7 @@ Send a link to the release blog post around internally...
   * Create a new milestone for the next release (for example, 1.5.1)
   * Move issues and pull requests from the old milestone to the new one if necessary
 * For major or minor releases, be sure to add the new version to the MiMa checks (for example, see #1298)
-* If this is MAJOR release, make sure all the related sample apps and [downstream projects](https://github.com/lagom/lagom-akka-discovery-service-locator/tree/lagom-1.5.x) upgrade to use the appropriate version as the default branch (e.g. `1.5.x`https://github.com/lagom/online-auction-scala/branches).
+* If this is MAJOR release, make sure all the related sample apps and [downstream projects](https://github.com/playframework/play-meta/blob/master/releasing/lagom.md#downstream) upgrade to use the appropriate version as the default branch.
 * If there is a new release branch, update the nightlies script on `vegemite` to ensure the documentation is deployed
   * The GitHub repository is the source of truth, so change it in a GitHub pull request first
   * After it is merged, ssh to `vegemite` and git pull the latest version
