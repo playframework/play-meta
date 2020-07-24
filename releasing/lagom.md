@@ -151,9 +151,6 @@ to find the most recent file to `tail` if you can to see what is happening.
     * <https://github.com/lagom/lagom-java.g8/blob/master/src/main/g8/project/plugins.sbt>
 * Samples:
     * <https://github.com/lagom/lagom-samples>
-* OpenShift smoketests
-    * <https://github.com/lagom/lagom-scala-openshift-smoketests/blob/1.6.x/project/plugins.sbt#L2>
-    * <https://github.com/lagom/lagom-java-openshift-smoketests/blob/1.6.x/pom.xml#L129>
   
 ## Announce the Release
 
