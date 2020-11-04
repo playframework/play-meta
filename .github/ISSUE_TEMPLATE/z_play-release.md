@@ -13,7 +13,6 @@ Better to do this in advance:
 
 * [ ] Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one
   * [ ] [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
-  * [ ] [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
   * [ ] Akka Team
 * [ ] [Triage issues][]
 

@@ -32,8 +32,7 @@
 Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one. For example:
 
 1. [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
-2. [Lightbend Platform](https://www.lightbend.com/lightbend-platform) Team
-3. Akka Team
+2. Akka Team
 
 ### Issues and pull request triage
 
