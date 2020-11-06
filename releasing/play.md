@@ -388,6 +388,7 @@ git fetch --tags && git shortlog -s 2.8.1..2.8.2 | cut -c8- | sort
 
 ### Step 8 - Post release tasks
 
+1. Consider merging a new PR on the branch you just release to work around https://github.com/lightbend/vegemite/issues/80
 1. Close the milestone for the release (for example 2.8.1)
 2. Create a new milestone for the next release (for example 2.8.2)
 3. Move issues and pull requests from the old milestone to the new one if necessary
