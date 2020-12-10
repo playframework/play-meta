@@ -115,7 +115,7 @@ Prepare the branch:
 - Look at [`status:needs-backport`](https://github.com/playframework/playframework/issues?utf8=%E2%9C%93&q=label%3Astatus%3Aneeds-backport+) issues/PRs (including closed ones). If you are releasing an older version of Play, look at the `status:needs-backport-x.x` label too.
 - Look at issues/PRs tagged milestone version (including closed ones).
 - Updated any dependencies that are needed (e.g. Dependencies.scala).
-- do a local build and use [the local-test.sh from play-samples](https://github.com/playframework/play-samples/blob/2.8.x/local-test.sh) for a final round of tests.
+- do a local build or the appropriate snapshot (needs adding `resolvers`) and use [the local-test.sh from play-samples](https://github.com/playframework/play-samples/blob/2.8.x/local-test.sh) for a final round of tests.
 
 When ready:
 
