@@ -61,7 +61,6 @@ Better to do this in advance:
   * [ ] [Deploy the website changes][]
 
 * [ ] [Announce][]
-  * [ ] Write a blog post on <https://playframework.ghost.io/ghost/24> about the release.
   * [ ] Write a topic on <https://discuss.lightbend.com/>
   * [ ] Write a release on <https://github.com/playframework/playframework/releases>
   * [ ] Send an internal email to eng-updates
