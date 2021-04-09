@@ -111,13 +111,8 @@ this to your build definition:
     // in build.sbt
     resolvers in ThisBuild += Resolver.sonatypeRepo("releases") 
 
-*NOTE*: that Sonatype doesn't include the `lagom-sbt-plugin` which is only published to bintray. Until bintray
-propagates changes you won't be able to test.
-
 Verify the release:
 
-* <https://bintray.com/lagom/sbt-plugin-releases/lagom-sbt-plugin/> must contain your version and be deployed using
-  sbt's ivy pattern (such as `scala_{versions}/sbt_{versions}/1.4.7`)
 * <https://repo1.maven.org/maven2/com/lightbend/lagom/> must contain all the other artifacts for the new version.
 
 ## Update the Web Site
