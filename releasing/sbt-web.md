@@ -7,7 +7,7 @@
 1. You'll need the write access to the sbt-web plugin's Github repo.
 2. The easiest way to do this is to be added to the sbt-web team: https://github.com/orgs/sbt/teams/sbt-web
 
-### Bintray
+### !! OUTDATED !! Bintray is closed since May 1st 2021
 
 1. You'll need an account in bintray.org
 1. You'll need to be a member of the sbt-web organisation on Bintray

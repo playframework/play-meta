@@ -70,19 +70,18 @@ For tagging some releases (e.g. play-ws) you may need to enter your Github usern
 
 ## If something goes wrong
 
-The release process pushes all artifacts to maven central **and** bintray, but doesn't "promote" them until all
+The release process pushes all artifacts to maven central, but doesn't "promote" them until all
 publishing is complete and successful.
 
-If the build failed during or after the promotion of either bintray or maven central artifacts, there is no
+If the build failed during or after the promotion of maven central artifacts, there is no
 going back.  Published artifacts are immutable, they find their way into CDNs, into caches on developer
 machines, and if there are two different versions of the same artifact out there, this can cause big problems.
 Your only option is to fix the problem, and attempt another release of the next version.  Remember, version
 numbers are cheap.
 
-If the build failed during or before the publishing of artifacts, but not after either the bintray or maven
-central promotion, you can drop the maven central staging repository and delete bintray version.  This can
-either be done through their corresponding web interfaces, or by using the `sonatypeDrop` and `bintrayUnpublish` sbt
-commands.
+If the build failed during or before the publishing of artifacts, but not after maven
+central promotion, you can drop the maven central staging repository.  This can
+either be done through their corresponding web interfaces, or by using the `sonatypeDrop` sbt commands.
 
 ## Releasing Play
 
