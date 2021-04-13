@@ -83,6 +83,10 @@ If the build failed during or before the publishing of artifacts, but not after 
 central promotion, you can drop the maven central staging repository.  This can
 either be done through their corresponding web interfaces, or by using the `sonatypeDrop` sbt commands.
 
+## Before you release Play
+
+Check when was the last time scala-steward run on the repository and consider running it manually (it only runs monthly otherwise).
+
 ## Releasing Play
 
 ### Step 0 - release projects that Play depends on (play-json, play-ws, Twirl)
