@@ -85,7 +85,7 @@ either be done through their corresponding web interfaces, or by using the `sona
 
 ## Before you release Play
 
-Check when was the last time scala-steward run on the repository and consider running it manually (it only runs mothly otherwise).
+Check when was the last time scala-steward run on the repository and consider running it manually (it only runs monthly otherwise).
 
 ## Releasing Play
 
