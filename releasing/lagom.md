@@ -56,6 +56,10 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
 
 ## Before You Release
 
+### Version bumps
+
+Check when was the last time scala-steward run on the repository and consider running it manually (it only runs mothly otherwise).
+
 ### Issues and pull request triage
 
 See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Alagom+archived%3Afalse+) and are possibly related to the upcoming release. This is mainly important if you are doing a minor or major release.
