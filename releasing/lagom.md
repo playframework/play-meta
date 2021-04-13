@@ -58,7 +58,7 @@ If there's been changes in the build or bumped versions of sbt plugins, you may 
 
 ### Version bumps
 
-Check when was the last time scala-steward run on the repository and consider running it manually (it only runs mothly otherwise).
+Check when was the last time scala-steward run on the repository and consider running it manually (it only runs monthly otherwise).
 
 ### Issues and pull request triage
 
