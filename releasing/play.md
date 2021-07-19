@@ -366,12 +366,14 @@ To set up your public key:
 ```
  Host www.playframework.com
   User ubuntu
-  Hostname 54.173.126.144
+  Hostname ???
 ```
 
 3. You can now log in: `ssh ubuntu@www.playframework.com`
-
-ssh into `ubuntu@www.playframework.com`, and run `./deploy.sh`
+4. ssh into `ubuntu@www.playframework.com`
+5. `cd playframework.com`
+6. `git pull`
+7. Restart the linux service: `sudo service playframework restart` // ???
 
 **Verification**: Check that <https://www.playframework.com/changelog> contains the new release.  
 
