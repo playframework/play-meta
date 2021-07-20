@@ -360,20 +360,16 @@ Commit and push your changes.
 
 To set up your public key:
 
-1. Ask someone else from Play team to add your pub key to the website instance.
-2. Edit ~/.ssh/config and add the following:
+1. Ask someone else from Play team to give you access to the `playframework` team on keybase.
+2. Download the PEM file and log into the machine:
 
 ```
- Host www.playframework.com
-  User ubuntu
-  Hostname ???
+ssh -i PlayProd2015.pem ubuntu@ec2-100-25-201-80.compute-1.amazonaws.com
 ```
-
-3. You can now log in: `ssh ubuntu@www.playframework.com`
-4. ssh into `ubuntu@www.playframework.com`
-5. `cd playframework.com`
-6. `git pull`
-7. Restart the linux service: `sudo service playframework restart` // ???
+3. `cd playframework.com`
+4. `git pull`
+5. `sbt stage`
+6. Restart the linux service: `sudo systemctl restart playframework.service`
 
 **Verification**: Check that <https://www.playframework.com/changelog> contains the new release.  
 
