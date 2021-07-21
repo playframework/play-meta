@@ -41,6 +41,8 @@ git clone https://github.com/playframework/play-generated-docs.git generated
 
 4. Download the play1 modules
 
+Use https://github.com/playframework/playframework.com/pull/443 to regenerate the modules list.
+
 ```
 cd ~/play-docs-translations 
 mkdir modules
