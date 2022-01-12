@@ -175,7 +175,7 @@ for Play 2.8.2 artifacts:
 <https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.2~~>
 
 **Verification**: You can check that the artifacts are available at Maven Central under
-play-slick_\<scalaversion\>, etc.
+`play-slick_<scalaversion>`, etc.
 
 - <https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.13/>
 - <https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/>
@@ -217,7 +217,7 @@ To release omnidoc:
 
 TODO: all of the above should soon become obsolete. All that process should be run by the CI build.
 
-**Verification**: check that the artifacts are available at Maven Central under play-omnidoc_<scalaversion>. It
+**Verification**: check that the artifacts are available at Maven Central under `play-omnidoc_<scalaversion>`. It
 may take a few minutes. <https://repo1.maven.org/maven2/com/typesafe/play/>
 
 Once that is done, you can update the docs on playframework.com, by running:
@@ -226,19 +226,23 @@ Checkout https://github.com/playframework/play-generated-docs and switch to the 
 
 In `play-generated-docs` checkout and after switching the branch, eg: 2.8.x, run the following:
 
+```sh
 rm -rf api/java
 rm -rf api/scala
 rm -rf manual
 rm -rf confs
+```
 
 Followed by... 
 
+```sh
 cp -r <path-to-omnidoc>/target/scala-2.13/omnidoc/javadoc api/java
 cp -r <path-to-omnidoc>/target/scala-2.13/omnidoc/scaladoc api/scala                                                                                    
-cp -r <path-to-omnidoc>/target/scala-2.13/omnidoc/playdoc/manual manual                                                                                 <2.8.x ✗>
+cp -r <path-to-omnidoc>/target/scala-2.13/omnidoc/playdoc/manual manual
 cp -r <path-to-omnidoc>/target/scala-2.13/omnidoc/playdoc/confs confs
+```
 
-Where <path-to-omnidoc> is the path to the omnidoc repo in your machine that you just released.
+Where `<path-to-omnidoc>` is the path to the omnidoc repo in your machine that you just released.
 
 In `play-generated-docs`
 
@@ -250,7 +254,7 @@ git tag -am "Version <tag>" <tag>
 git push origin <tag>
 ```
 
-Where <tag> is the version you are releasing, eg: 2.8.11 and branch is the branch you are updating eg: 2.8.x
+Where `<tag>` is the version you are releasing, eg: 2.8.11 and branch is the branch you are updating eg: 2.8.x
 
 Verification: check there is a new tag `<tag>` at <https://github.com/playframework/play-generated-docs> project. It
 should be on top of <https://github.com/playframework/play-generated-docs/releases>. The website should pick this
@@ -308,7 +312,7 @@ ssh -i PlayProd2015.pem ubuntu@ec2-100-25-201-80.compute-1.amazonaws.com
 5. `sbt stage`
 6. Restart the linux service: `sudo systemctl restart playframework.service`
 
-**Verification**: Check that <https://www.playframework.com/changelog> contains the new release.  
+**Verification**: Check that <https://www.playframework.com/changelog> contains the new release and also if the previous release moved to <https://www.playframework.com/releases>.
 
 ### Step 6 - Announce
 
