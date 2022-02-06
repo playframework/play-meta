@@ -114,7 +114,7 @@ Prepare the branch:
 
 When ready:
 
-If releasing from `master` or `2.8.x`
+If releasing from `main` or `2.8.x`
 
 - make sure you are using **JDK8** to build and release
 - checkout the branch you want to release and check that the commit you want to release has a green build in CI
@@ -166,7 +166,7 @@ For play-slick and scalatestplus-play:
 
 TODO: all of the above should soon become obsolete. All that process should be run by the CI build.
 
-For play-grpc see its [Releasing](https://github.com/playframework/play-grpc/blob/master/RELEASING.md)
+For play-grpc see its [Releasing](https://github.com/playframework/play-grpc/blob/main/RELEASING.md)
 procedure.
 
 Again, you will need to wait 10 minutes or so for a Maven central sync before you can perform any of the
@@ -189,7 +189,7 @@ on Maven. Try the templates out. You may need to update them if they don't work 
 **Warning**: this is a compulsory step and the version X.Y.Z of omnidoc released here must match the version
 X.Y.Z of Play released in step 1 above.
 
-Omnidoc builds Play's documentation from all the current versions of Play and its modules. To understand what omnidoc really does under the covers, read the [README](https://github.com/playframework/omnidoc/blob/master/README.md). Note that once omnidoc completed, you will have the docs on the machine where you run the command and you still need to push them to `play-generated-docs` (next step).
+Omnidoc builds Play's documentation from all the current versions of Play and its modules. To understand what omnidoc really does under the covers, read the [README](https://github.com/playframework/omnidoc/blob/main/README.md). Note that once omnidoc completed, you will have the docs on the machine where you run the command and you still need to push them to `play-generated-docs` (next step).
 
 In the omnidoc build file for the branch of Play that you are releasing:
 
@@ -282,7 +282,7 @@ These are the steps to update <https://playframework.com> website.
 
 #### Update `.version` in `play-generated-docs`
 
-If you are releasing a MAJOR version, review the contents of [`.version` in `play-generated-docs`](https://github.com/playframework/play-generated-docs/blob/master/.version) before  updating the site.
+If you are releasing a MAJOR version, review the contents of [`.version` in `play-generated-docs`](https://github.com/playframework/play-generated-docs/blob/main/.version) before  updating the site.
 
 #### Update `playReleases.json` and `changelog.md`
 
