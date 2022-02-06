@@ -10,6 +10,6 @@ Verify by:
 
 Make sure you're not looking at the webhoook for the old domain name (http://typesafe.com/contribute/cla/_github-hook), which can be deleted.
 
-Recommend also to add 2 branch protection rules matching `master` and `[0-9].*.x` with:
+Recommend also to add 2 branch protection rules matching `main` and `[0-9].*.x` with:
 
 * requiring the `typesafe-cla-validator` check
