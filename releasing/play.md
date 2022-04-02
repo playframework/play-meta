@@ -317,7 +317,7 @@ ssh -i PlayProd2015.pem ubuntu@ec2-100-25-201-80.compute-1.amazonaws.com
 ### Step 6 - Announce
 
 1. If the release contains security fixes post an update on <https://groups.google.com/g/play-framework-security>
-1. Write a topic on <https://discuss.lightbend.com/>
+1. ~Write a topic on <https://discuss.lightbend.com/>~
 1. Write a release on <https://github.com/playframework/playframework/releases>
 1. Tweet about the new release.
 
