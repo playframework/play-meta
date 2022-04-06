@@ -262,8 +262,6 @@ tagged version of the generated docs up to 10 minutes later. You can check that 
 pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
 <https://www.playframework.com/documentation/2.7.2/Home>.
 
-The 10-minute refresh [doesn't currently work](https://github.com/playframework/playframework.com/issues/382).
-
 ### Step 4 - update playframework samples
 #### `play-samples`
 
