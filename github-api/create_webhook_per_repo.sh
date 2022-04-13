@@ -1,6 +1,6 @@
 #!/bin/bash
 
-github_token="ghp_XXX"
+github_token="ghp_XXX" # Personal access token with admin:org_hook and admin:repo_hook
 webhook_url="https://discord.com/api/webhooks/XXX/github"
 
 # To fetch all the public repos:
