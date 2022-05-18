@@ -134,7 +134,7 @@ for Play 2.8.2 artifacts:
 <https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.2~~>
 
 
-**Warning**: after pushing the a tag to GitHub, a Travis job will be trigger. This job will fail for `2.7.x` (not on other branches). The reason of the failure is a circular dependency with Omnidoc.
+**Warning**: after pushing the a tag to GitHub, a GitHub actions workflow will be trigger. This job will fail for `2.7.x` (not on other branches). The reason of the failure is a circular dependency with Omnidoc.
 
 ### Step 2 - release external modules
 
@@ -269,7 +269,7 @@ Update the Play version (and other released artifacts) in any of the example pro
 
 So that everything is up to date.
 
-**Verification**: The sample repository builds can be seen at <https://travis-ci.com/playframework/play-samples>. Make sure the build is green and then merge the pull request (it is possible Mergify will do that automatically).
+**Verification**: The sample repository builds can be seen at <https://github.com/playframework/play-samples/actions/workflows/build-test.yml>. Make sure the build is green and then merge the pull request (it is possible Mergify will do that automatically).
 
 There is an integration through webhook to example-code-service: see
 <https://github.com/lightbend/example-code-service/> for what is on their end for packaging `./sbt` in a zip file.
