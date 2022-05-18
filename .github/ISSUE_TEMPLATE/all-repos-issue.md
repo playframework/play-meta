@@ -1,5 +1,5 @@
 ---
-name: ":exploding_head: All repositories issue"
+name: "🤯 All repositories issue"
 about: Tracking issue for all repositories
 title: ''
 labels: ''
