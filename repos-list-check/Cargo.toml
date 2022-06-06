@@ -10,4 +10,4 @@ hubcaps = { git = "https://github.com/softprops/hubcaps", features = ["tls", "ht
 hyper = "0.12.23"
 hyper-tls = "0.3.1"
 regex = "1.1.0"
-tokio = "0.1.15"
+tokio = "1.8.4"
