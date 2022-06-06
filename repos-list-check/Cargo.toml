@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2018"
 
 [dependencies]
-comrak = "0.4.1"
+comrak = "0.10.1"
 futures = "0.1.25"
 hubcaps = { git = "https://github.com/softprops/hubcaps", features = ["tls", "httpcache"] }
 hyper = "0.12.23"
