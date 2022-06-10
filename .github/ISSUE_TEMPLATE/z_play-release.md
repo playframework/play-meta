@@ -45,6 +45,7 @@ Better to do this in advance:
 
 * [ ] [Release external modules][]
   * [ ] release [play-slick][]
+  * [ ] release [play-ebean][]
   * [ ] release [scalatestplus-play][]
   * [ ] release [play-grpc][]
 
@@ -87,6 +88,7 @@ Better to do this in advance:
 [play-grpc]: https://github.com/playframework/play-grpc
 [play-json]: https://github.com/playframework/play-json
 [play-slick]: https://github.com/playframework/play-slick
+[play-ebean]: https://github.com/playframework/play-ebean
 [play-ws]: https://github.com/playframework/play-ws
 [scalatestplus-play]: https://github.com/playframework/scalatestplus-play
 [twirl]: https://github.com/playframework/twirl
