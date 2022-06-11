@@ -141,6 +141,7 @@ for Play 2.8.2 artifacts:
 This includes the modules:
 
 - play-slick
+- play-ebean
 - scalatestplus-play
 - play-grpc
 
