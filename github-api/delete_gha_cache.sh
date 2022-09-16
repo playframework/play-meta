@@ -6,7 +6,7 @@ github_token="ghp_XXX"
 repo="playframework"
 
 # To list all repos that currently have an existing cache (needs read:org permission!)
-#curl -H 'Authorization: token $github_token' https://api.github.com/orgs/playframework/actions/cache/usage-by-repository | jq ".repository_cache_usages[].full_name" 
+#curl -H 'Authorization: token '$github_token https://api.github.com/orgs/playframework/actions/cache/usage-by-repository | jq ".repository_cache_usages[].full_name"
 
 echo "Starting to delete all caches of repo $repo"
 json_response=$(curl -s -H "Authorization: token $github_token" https://api.github.com/repos/playframework/$repo/actions/caches)
