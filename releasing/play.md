@@ -210,13 +210,15 @@ These changes can generally be pushed directly to GitHub.
 
 To release omnidoc:
 
-- make sure you are using **JDK8** to build and release
-- checkout the branch you want to release and check that the commit you want to release has a green build in CI
-- DO NOT create a tag. Omnidoc does not have a `version.sbt` file and also does not use sbt-dynver. It gets its version from Play.
-- run `sbt release`
-- at the end of the release, the commit will be tagged and you must push the tag.
-
-TODO: all of the above should soon become obsolete. All that process should be run by the CI build.
+- For upcoming Play 2.9 we [set up `sbt-ci-release`](https://github.com/playframework/play-ebean/pull/318):
+  - Create a tag for the release either by using `git tag` or the GitHub UI. Make sure you are on the correct branch (where you just set the correct versions described above)
+  - After the tag was pushed, the GitHub actions ci workflow will do the rest.
+- For Play 2.8.x you still have to release by hand:
+  - make sure you are using **JDK8** to build and release
+  - checkout the branch you want to release and check that the commit you want to release has a green build in CI
+  - DO NOT create a tag. Omnidoc does not have a `version.sbt` file and also does not use sbt-dynver. It gets its version from Play.
+  - run `sbt release`
+  - at the end of the release, the commit will be tagged and you must push the tag.
 
 **Verification**: check that the artifacts are available at Maven Central under `play-omnidoc_<scalaversion>`. It
 may take a few minutes. <https://repo1.maven.org/maven2/com/typesafe/play/>
