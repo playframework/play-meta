@@ -210,7 +210,7 @@ These changes can generally be pushed directly to GitHub.
 
 To release omnidoc:
 
-- For upcoming Play 2.9 we [set up `sbt-ci-release`](https://github.com/playframework/play-ebean/pull/318):
+- For upcoming Play 2.9 we [set up `sbt-ci-release`](https://github.com/playframework/omnidoc/pull/207):
   - Create a tag for the release either by using `git tag` or the GitHub UI. Make sure you are on the correct branch (where you just set the correct versions described above)
   - After the tag was pushed, the GitHub actions ci workflow will do the rest.
 - For Play 2.8.x you still have to release by hand:
