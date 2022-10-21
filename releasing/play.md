@@ -2,24 +2,20 @@
 
 - [Play Release Procedure](#play-release-procedure)
   - [Before the release](#before-the-release)
-    - [Internal communication](#internal-communication)
     - [Issues and pull request triage](#issues-and-pull-request-triage)
   - [Release tracking issue](#release-tracking-issue)
   - [Intro](#intro)
   - [Prerequisites](#prerequisites)
   - [If something goes wrong](#if-something-goes-wrong)
   - [Releasing Play](#releasing-play)
-    - [Step 0 - release projects that Play depends on (play-json, play-ws, Twirl)](#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl)
-    - [Step 1 - release Play itself](#step-1---release-play-itself)
-    - [Step 2 - release external modules](#step-2---release-external-modules)
-    - [Step 3 - release omnidoc](#step-3---release-omnidoc)
-    - [Step 4 - update playframework templates and seeds](#step-4---update-playframework-templates-and-seeds)
-      - [Docs](#docs)
-      - [Other](#other)
+    - [Step 0 - Release projects that Play depend on (play-json, play-ws, twirl)](#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl)
+    - [Step 1 - Release Play itself](#step-1---release-play-itself)
+    - [Step 2 - Release external modules](#step-2---release-external-modules)
+    - [Step 3 - Release omnidoc](#step-3---release-omnidoc)
+    - [Step 4 - Update `play-samples`](#step-4---update-play-samples)
     - [Step 5 - Update playframework.com](#step-5---update-playframeworkcom)
       - [Update `.version` in `play-generated-docs`](#update-version-in-play-generated-docs)
       - [Update `playReleases.json` and `changelog.md`](#update-playreleasesjson-and-changelogmd)
-      - [Update versions for Example Code Service](#update-versions-for-example-code-service)
       - [Deploy the website changes](#deploy-the-website-changes)
     - [Step 6 - Announce](#step-6---announce)
     - [Step 7 - Post release tasks](#step-7---post-release-tasks)
@@ -28,59 +24,48 @@
 
 ### Issues and pull request triage
 
-See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+) and are possibly related to the upcoming release. This is mainly important if you are doing a minor or major release.
+See if there are [issues that need triage](https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+) and are possibly related to the upcoming release.
+This is mainly important if you are doing a minor or major release.
 
 ## Release tracking issue
 
-Create a new [release tracking issue][].
-
-[release tracking issue]: https://github.com/playframework/play-meta/issues/new?template=z_play-release.md
+Create a new [release tracking issue](https://github.com/playframework/play-meta/issues/new?template=z_play-release.md).
 
 ## Intro
 
 When cutting a release of Play, you need to make the following decision:
 
-- Does this release of Play require releasing the modules that depend on it, eg play-grpc and play-slick.  For
-  a typical minor release, it would not.  For a major release, and often for pre releases of major releases, the
-  answer is yes.
+- Does this release of Play require releasing the modules that depend on it, e.g. play-grpc and play-slick.
+  For a typical minor release, it would not.  For a major release, and often for pre releases of major releases, the answer is yes.
 
 ## Prerequisites
 
-Your Sonatype user must have rights to publish to `com.typesafe.play` and you should have a credentials file containing your credentials.
-The file can be placed in `~/.sbt/1.0/sonatype.sbt`.
-
-```sbt
-credentials += Credentials("Sonatype Nexus Repository Manager",
-                           "oss.sonatype.org",
-                           "your-sonatype-user",
-                           "your-sonatype-user-token")
-```
+As of 2022 all repositories in the Play Framework organization are released by tag. That means the sonatype credentials are set up at the GitHub organization level.
+To release from older branches however you might still have to release from your machine, that's why you have to set up the sonatype credentials locally.
+See [here](https://github.com/xerial/sbt-sonatype#homesbtsbt-version-013-or-10sonatypesbt-1) how that is done (either by setting `credentials +=...` or using the env variable).
 
 ## If something goes wrong
 
 The release process pushes all artifacts to maven central and "promote" them automatically.
 
-If the build fails during or after the promotion of maven central artifacts, there is no
-going back.  Published artifacts are immutable, they find their way into CDNs, into caches on developer
-machines, and if there are two different versions of the same artifact out there, this can cause big problems.
-Your only option is to fix the problem, and attempt another release of the next version.  Remember, version
-numbers are cheap.
+If the build fails during or after the promotion of maven central artifacts, there is no going back.
+Published artifacts are immutable, they find their way into CDNs, into caches on developer machines, and if there are two different versions of the same artifact out there, this can cause big problems.
+Your only option is to fix the problem, and attempt another release of the next version.  Remember, version numbers are cheap.
 
-If the build failed during or before the publishing of artifacts, but not after maven
-central promotion, you can drop the maven central staging repository.  This can
-either be done through their corresponding web interfaces, or by using the `sonatypeDrop` sbt commands.
+If the build failed during or before the publishing of artifacts, but not after maven central promotion, you can drop the maven central staging repository.
+This can either be done through their corresponding [web interfaces](https://oss.sonatype.org/), or by using the `sonatypeDrop` sbt commands.
 
 The most common failure is a request timeout. Typically, you can see in the logs that all artifacts have been uploaded and the build fails with a timeout while closing the repository or promoting it. If that's the case, the easiest solution is to close and promote by hand on Sonatype.
 
 ## Before you release Play
 
-Check when was the last time scala-steward run on the repository and consider running it manually (it only runs monthly otherwise).
+Check when was the last time scala-steward ran on the repository and consider updating the dependencies yourself. Have a look in the [.scala-steward.conf](https://github.com/playframework/playframework/blob/main/.scala-steward.conf).
 
 Take this with a grain of salt. It's good and nice to have a release with the latest dependencies, but dependency updates at the last minute can come with surprises.
 
 ## Releasing Play
 
-### Step 0 - release projects that Play depends on (play-json, play-ws, Twirl)
+### Step 0 - Release projects that Play depends on (play-json, play-ws, twirl)
 
 Prepare the branch for each project:
 
@@ -88,21 +73,26 @@ Prepare the branch for each project:
 - Look at `status:needs-backport` issues/PRs (including closed ones).
 - Look at issues/PRs tagged milestone version (including closed ones).
 - Update any dependencies that are needed.
-- Update any upstream projects (e.g make sure new play-ws is using new play-json)
+- Update any upstream projects (e.g make sure new `play-ws` is using new `play-json`)
 
-May need to release these projects: play-json, play-ws, twirl
+May need to release these projects: `play-json`, `play-ws`, `twirl`
 
 When ready:
 
-- make sure you are using **JDK8** to build and release
-- checkout the branch you want to release and check that the commit you want to release has a green build in CI
-- tag the commit, eg: (git tag x.y.z). The projects are using sbt-dynver, so tagging first is important in order to get the right version number. The projects are NOT using tag prefixes (eg: v1.0.2), they use 1.0.2 instead. Watch-out, don't be mislid by twirl and play-ws. They do have tags prefixed by a `v`, but the dynver config is requiring the new tags to NOT have a prefix.
-- run `sbt release`
-- at the end of the release, you must push the tag.
-- Check the correcponding release page in GitHub, adapt the release notes as needed and published it.
+- If the project already has set up `sbt-ci-release`:
+  - Make sure you are on the latest HEAD of the branch you want to release
+  - Tag the version you want to release: `git tag -s x.y.z`
+  - Push the tag to the upstream repo.
+  - In the GitHub user interface, check "Publish" action, it will publish the release.
+- If you release from an older branch that has no `sbt-ci-release` set up yet:
+  - Make sure you are using **JDK8** to build and release!
+  - Checkout the branch you want to release and check that the commit you want to release has a green build in CI
+  - Tag the commit, eg: (`git tag -s x.y.z`). The projects are using `sbt-dynver`, so tagging first is important in order to get the right version number. The projects are NOT using tag prefixes (eg: v1.0.2), they use 1.0.2 instead. Watch-out, don't be mislid by twirl and play-ws. They do have tags prefixed by a `v`, but the dynver config is requiring the new tags to NOT have a prefix.
+  - Run `sbt release`
+  - At the end of the release, you must push the tag.
+  - Check the correcponding release page in GitHub, adapt the release notes as needed and published it.
 
-TODO: all of the above should soon become obsolete. All that process should be run by the CI build.
-### Step 1 - release Play itself
+### Step 1 - Release Play itself
 
 Prepare the branch:
 
@@ -110,33 +100,32 @@ Prepare the branch:
 - Look at [`status:needs-backport`](https://github.com/playframework/playframework/issues?utf8=%E2%9C%93&q=label%3Astatus%3Aneeds-backport+) issues/PRs (including closed ones). If you are releasing an older version of Play, look at the `status:needs-backport-x.x` label too.
 - Look at issues/PRs tagged milestone version (including closed ones).
 - Updated any dependencies that are needed (e.g. Dependencies.scala).
-- do a local build or the appropriate snapshot (needs adding `resolvers`) and use [the local-test.sh from play-samples](https://github.com/playframework/play-samples/blob/2.8.x/local-test.sh) for a final round of tests.
+- Do a local build or the appropriate snapshot and use [the `local-test.sh` from `play-samples`](https://github.com/playframework/play-samples/blob/2.8.x/local-test.sh) for a final round of tests.
 
 When ready:
 
-If releasing from `main` or `2.8.x`
+- If releasing 2.9 or newer:
+  - Tag the version you want to release: `git tag -s x.y.z`
+  - Push the tag to the upstream repo.
+  - In the GitHub user interface, check "Publish" action, it will publish the release.
+- If releasing from `2.8.x`:
+  - Make sure you are using **JDK8** to build and release.
+  - Ccheckout the branch you want to release and check that the commit you want to release has a green build in CI
+  - Tag the commit, eg: (`git tag -s x.y.z`). The projects are using sbt-dynver, so tagging first is important in order to get the right version number. Play is NOT using tag prefixes (eg: v1.0.2), it uses 1.0.2 instead and dynver is configured as such.
+  - Run `sbt release`
+  - At the end of the release, you must push the tag.
+ - Check the corresponding release page in GitHub, adapt the release notes as needed and published it.
 
-- make sure you are using **JDK8** to build and release
-- checkout the branch you want to release and check that the commit you want to release has a green build in CI
-- tag the commit, eg: (git tag x.y.z). The projects are using sbt-dynver, so tagging first is important in order to get the right version number. Play is NOT using tag prefixes (eg: v1.0.2), it uses 1.0.2 instead and dynver is configured as such.
-- run `sbt release`
-- at the end of the release, you must push the tag.
-- Check the correcponding release page in GitHub, adapt the release notes as needed and published it.
+Once Play is released, you need to wait 10 minutes or so for a Maven central sync before you can perform any of the remaining tasks.
 
-TODO: all of the above should soon become obsolete. All that process should be run by the CI build.
+**Verification**:
+You can check that the artifacts are available at Maven Central [under `play_<scalaversion>`](https://repo1.maven.org/maven2/com/typesafe/play/).
+You can see the staged artifacts here on OSS Sonatype. E.g. [here is a search](<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.18~~>) for Play 2.8.18 artifacts.
 
-Once Play is released, you need to wait 10 minutes or so for a Maven central sync before you can perform any of
-the remaining tasks.
+**Warning**:
+After pushing the a tag to GitHub, a GitHub actions workflow will be trigger.
 
-**Verification**: You can check that the artifacts are available at Maven Central under play_\<scalaversion>.
-<https://repo1.maven.org/maven2/com/typesafe/play/>. You can see the staged artifacts here on OSS Sonatype. E.g. here is a search
-for Play 2.8.2 artifacts:
-<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.2~~>
-
-
-**Warning**: after pushing the a tag to GitHub, a GitHub actions workflow will be trigger. This job will fail for `2.7.x` (not on other branches). The reason of the failure is a circular dependency with Omnidoc.
-
-### Step 2 - release external modules
+### Step 2 - Release external modules
 
 This includes the modules:
 
@@ -145,50 +134,41 @@ This includes the modules:
 - scalatestplus-play
 - play-grpc
 
-Only release these if they need to be
-released, generally for minor Play releases, there's no reason to cut a new release of these, these libraries
-are free to have their own release cycle.
+Only release these if they need to be released, generally for minor Play releases, there's no reason to cut a new release of these, these libraries are free to have their own release cycle.
 
-**Note**: since we update omnidoc and the Play templates and seeds people reading the docs or starting a new
-project will automatically see and use the latest minor versions of all modules, even if we don't patch all
-modules directly to update dependencies.
+**Note**: since we update omnidoc and the Play templates and seeds people reading the docs or starting a new project will automatically see and use the latest minor versions of all modules, even if we don't patch all modules directly to update dependencies.
 
-You may need to bump the Play version in the external module, do this, commit, and depending on how major the
-version bump is, push directly to the repo or go through a pull request.  Once that is done, to release:
+You may need to bump the Play version in the external module, do this, commit, and depending on how major the version bump is, push directly to the repo or go through a pull request.
+Once that is done, to release:
 
-For play-slick and scalatestplus-play:
+For `play-slick` and `scalatestplus-play`:
 
-- make sure you are using **JDK8** to build and release
-- checkout the branch you want to release and check that the commit you want to release has a green build in CI
-- tag the commit, eg: (git tag x.y.z). The projects are using sbt-dynver, so tagging first is important is important in order to get the right version number. The projects are NOT using tag prefixes (eg: v1.0.2), they use 1.0.2 instead.
-- run `sbt release`
-- at the end of the release, you must push the tag.
+- Make sure you are using **JDK8** to build and release
+- Checkout the branch you want to release and check that the commit you want to release has a green build in CI
+- Tag the commit, eg: (`git tag -s x.y.z`). The projects are using sbt-dynver, so tagging first is important is important in order to get the right version number. The projects are NOT using tag prefixes (eg: v1.0.2), they use 1.0.2 instead.
+- Run `sbt release`
+- At the end of the release, you must push the tag.
 - Check the correcponding release page in GitHub, adapt the release notes as needed and published it.
 
 TODO: all of the above should soon become obsolete. All that process should be run by the CI build.
 
-For play-grpc see its [Releasing](https://github.com/playframework/play-grpc/blob/main/RELEASING.md)
-procedure.
+Again, you will need to wait 10 minutes or so for a Maven central sync before you can perform any of the remaining tasks.
+In the meantime you can see the staged artifacts here on OSS Sonatype. E.g. here is a search for Play 2.8.18 artifacts:
+<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.18~~>
 
-Again, you will need to wait 10 minutes or so for a Maven central sync before you can perform any of the
-remaining tasks. In the meantime you can see the staged artifacts here on OSS Sonatype. E.g. here is a search
-for Play 2.8.2 artifacts:
-<https://oss.sonatype.org/#nexus-search;gav~com.typesafe.play~~2.8.2~~>
+**Verification**:
+You can check that the artifacts are available at Maven Central under `<library>_<scalaversion>` or `<sbt-plugin>_2.12_1.0`:
 
-**Verification**: You can check that the artifacts are available at Maven Central under
-`play-slick_<scalaversion>`, etc.
+- <https://repo1.maven.org/maven2/com/typesafe/play/>
+- <https://repo1.maven.org/maven2/org/scalatestplus/play/>
 
-- <https://repo1.maven.org/maven2/com/typesafe/play/play-slick_2.13/>
-- <https://repo1.maven.org/maven2/com/lightbend/play/play-grpc-testkit_2.12/>
-- <https://repo1.maven.org/maven2/org/scalatestplus/play/scalatestplus-play_2.13/>
+**Verification**:
+when you run sbt new playframework/play-{scala,java}-seed.g8 it should pick up the new version on Maven. Try the templates out. You may need to update them if they don't work with the new version of Play.
 
-**Verification**: when you run sbt new playframework/play-{scala,java}-seed.g8 it should pick up the new version
-on Maven. Try the templates out. You may need to update them if they don't work with the new version of Play.
+### Step 3 - Release omnidoc
 
-### Step 3 - release omnidoc
-
-**Warning**: this is a compulsory step and the version X.Y.Z of omnidoc released here must match the version
-X.Y.Z of Play released in step 1 above.
+**Warning**:
+This is a compulsory step and the version X.Y.Z of omnidoc released here must match the version X.Y.Z of Play released in step 1 above.
 
 Omnidoc builds Play's documentation from all the current versions of Play and its modules. To understand what omnidoc really does under the covers, read the [README](https://github.com/playframework/omnidoc/blob/main/README.md). Note that once omnidoc completed, you will have the docs on the machine where you run the command and you still need to push them to `play-generated-docs` (next step).
 
@@ -197,21 +177,21 @@ In the omnidoc build file for the branch of Play that you are releasing:
 1. Update the Play version to the version of Play that you just released, and also
 2. Update any external modules to their latest version that is compatible with that version of Play.
 
-Here's an example update to the omnidoc 2.4.x branch.
+Here's an example update to the omnidoc 2.8.x branch.
 
 ```diff
 $ git diff
 diff --git a/project/OmnidocBuild.scala b/project/OmnidocBuild.scala
--  val playVersion       = sys.props.getOrElse("play.version",       "2.4.3")
-+  val playVersion       = sys.props.getOrElse("play.version",       "2.4.4")
+-  val playVersion       = sys.props.getOrElse("play.version",       "2.8.0")
++  val playVersion       = sys.props.getOrElse("play.version",       "2.8.1")
 ```
 
-These changes can generally be pushed directly to GitHub.
+Push this changes directly to GitHub (no need for a pull request).
 
 To release omnidoc:
 
-- For upcoming Play 2.9 we [set up `sbt-ci-release`](https://github.com/playframework/omnidoc/pull/207):
-  - Create a tag for the release either by using `git tag` or the GitHub UI. Make sure you are on the correct branch (where you just set the correct versions described above)
+- For Play 2.9 and newer we [set up `sbt-ci-release`](https://github.com/playframework/omnidoc/pull/207):
+  - Create a tag for the release either by using `git tag -s` or the GitHub UI. Make sure you are on the correct branch (where you just set the correct versions described above)
   - After the tag was pushed, the GitHub actions ci workflow will do the rest.
 - For Play 2.8.x you still have to release by hand:
   - make sure you are using **JDK8** to build and release
@@ -220,8 +200,7 @@ To release omnidoc:
   - run `sbt release`
   - at the end of the release, the commit will be tagged and you must push the tag.
 
-**Verification**: check that the artifacts are available at Maven Central under `play-omnidoc_<scalaversion>`. It
-may take a few minutes. <https://repo1.maven.org/maven2/com/typesafe/play/>
+**Verification**: check that the artifacts are available at Maven Central under `play-omnidoc_<scalaversion>`. It may take a few minutes. <https://repo1.maven.org/maven2/com/typesafe/play/>
 
 Once that is done, you can update the docs on playframework.com, by running:
 
@@ -253,7 +232,7 @@ In `play-generated-docs`
 git add --all
 git commit -m "Documentation for <tag>"
 git push origin <branch>
-git tag -am "Version <tag>" <tag>
+git tag -sm "Version <tag>" <tag>
 git push origin <tag>
 ```
 
@@ -265,17 +244,12 @@ tagged version of the generated docs up to 10 minutes later. You can check that 
 pattern: `https://www.playframework.com/documentation/<tag>/Home`. For example
 <https://www.playframework.com/documentation/2.7.2/Home>.
 
-### Step 4 - update playframework samples
-#### `play-samples`
+### Step 4 - Update `play-samples`
 
-Update the Play version (and other released artifacts) in any of the example projects in https://github.com/playframework/play-samples
+Update the Play version (and other released artifacts) in any of the [play-example projects](https://github.com/playframework/play-samples).
 
-So that everything is up to date.
-
-**Verification**: The sample repository builds can be seen at <https://github.com/playframework/play-samples/actions/workflows/build-test.yml>. Make sure the build is green and then merge the pull request (it is possible Mergify will do that automatically).
-
-There is an integration through webhook to example-code-service: see
-<https://github.com/lightbend/example-code-service/> for what is on their end for packaging `./sbt` in a zip file.
+**Verification**: The sample repository builds can be seen at <https://github.com/playframework/play-samples/actions/workflows/build-test.yml>. Make sure the build is green and then merge the pull request.
+Only continue the release procedure if the samples pass the test! If they don't it's an indicator the relase might break existing applications!
 
 ### Step 5 - Update playframework.com
 
@@ -298,11 +272,11 @@ or development version, upgrade the website itself to use that version.
 
 Commit and push your changes.
 
-**NOTE**: you will need a distinct SSH public key for this.  Talk to Enno or Renato if you don't have access.
+**NOTE**: you will need a distinct SSH public key for this.  Talk to [Matthias](https://github.com/mkurz) or someone from the steering committee if you don't have access.
 
 To set up your public key:
 
-1. Ask someone else from Play team to give you access to the `playframework` team on keybase.
+1. Ask someone else from Play team to give you access the Play secrets.
 2. Download the PEM file and log into the machine:
 
 ```
@@ -318,21 +292,23 @@ ssh -i PlayProd2015.pem ubuntu@ec2-100-25-201-80.compute-1.amazonaws.com
 ### Step 6 - Announce
 
 1. If the release contains security fixes post an update on <https://groups.google.com/g/play-framework-security>
-1. ~Write a topic on <https://discuss.lightbend.com/>~
-1. Write a release on <https://github.com/playframework/playframework/releases>
+1. Publish the release on <https://github.com/playframework/playframework/releases>. There should be a release draft already.
+   - Make sure to check `[x] Create a discussion for this release` before publishing the release!
 1. Tweet about the new release.
 
-**Tip**: To get a list of authors:
+**Tip**:
+This shouldn't be necessary anymore because release drafter already adds all the author itself to the release notes, which will the display nicely at the bottom of a release. In case you want to list all the authors that contributed to a release you can use:
 
 ```bash
-git fetch --tags && git shortlog -s 2.8.1..2.8.2 | cut -c8- | sort
+git fetch --tags && git shortlog -s 2.8.0..2.8.1 | cut -c8- | sort
 ```
 
-**Verification**: Go to <https://discuss.lightbend.com/> and <https://twitter.com/playframework> look for the message and tweet.
+**Verification**:
+* <https://github.com/playframework/playframework/discussions/categories/announcements> - check the announcement!
+* <https://twitter.com/playframework> - check the tweet!
 
 ### Step 7 - Post release tasks
 
-1. Consider merging a new PR on the branch you just release to work around https://github.com/lightbend/vegemite/issues/80
-1. Close the milestone for the release (for example 2.8.1)
-2. Create a new milestone for the next release (for example 2.8.2)
-3. Move issues and pull requests from the old milestone to the new one if necessary
+1. Close the [milestone](https://github.com/playframework/playframework/milestones) for the release you just made
+1. Create a [new milestone](https://github.com/playframework/playframework/milestones/new) for the next release
+1. Move issues and pull requests from the old milestone to the new one if necessary
