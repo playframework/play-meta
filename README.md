@@ -13,8 +13,3 @@
 [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://api.mergify.com/v1/badges/playframework/play-meta&style=flat)](https://mergify.com)
 
 This repository is for team management and to track cross-repository efforts in the Play ecosystem.
-
-## Release Procedures
-
-* [Play Release Procedure](releasing/play.md)
-* [sbt-web Release Procedure](releasing/sbt-web.md)
