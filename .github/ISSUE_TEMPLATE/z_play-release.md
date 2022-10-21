@@ -11,9 +11,6 @@ assignees: ''
 
 Better to do this in advance:
 
-* [ ] Make sure that other teams inside Lightbend are aware of the upcoming release, even if it is a minor/patch one
-  * [ ] [Lightbend Telemetry](https://developer.lightbend.com/docs/telemetry/current/home.html) Team
-  * [ ] Akka Team
 * [ ] [Triage issues][]
 
 ## Do the Release ([Full document](https://github.com/playframework/play-meta/blob/main/releasing/play.md))
@@ -38,7 +35,7 @@ Better to do this in advance:
 
 * [ ] [Release Play itself][]
     * [ ] Look for [PRs][play/prs] that should be merged.
-    * [ ] Look at [`status:needs-backport`][play/backport], [`status:needs-forwardport`][play/forwardport], [`status:needs-backport-2.6`][play/backport-2.6] issues/PRs (including closed ones).
+    * [ ] Look at [`status:needs-backport`][play/backport], [`status:needs-forwardport`][play/forwardport] issues/PRs (including closed ones).
     * [ ] Look at issues/PRs tagged [milestone][play/milestones] version (including closed ones).
     * [ ] Update any dependencies that are needed. (e.g JDK, Scala)
     * [ ] Make sure play uses new play-json, play-ws, twirl
@@ -51,20 +48,16 @@ Better to do this in advance:
 
 * [ ] [Release omnidoc][]
 
-* [ ] [Update the supported modules page][]
-* [ ] [Update playframework templates and seeds][]
-* [ ] [Update Example Code Service][]
+* [ ] [Update play-samples][]
 
 * [ ] [Update playframework.com][]
   * [ ] [Update `.version` in `play-generated-docs`][]
   * [ ] [Update `playReleases.json` and `changelog.md`][]
-  * [ ] [Update versions for Example Code Service][]
   * [ ] [Deploy the website changes][]
 
 * [ ] [Announce][]
-  * [ ] Write a topic on <https://discuss.lightbend.com/>
-  * [ ] Write a release on <https://github.com/playframework/playframework/releases>
-  * [ ] Send an internal email to eng-updates
+  * [ ] Post on security mailing list if necessary
+  * [ ] Publish a release at <https://github.com/playframework/playframework/releases> with a corresponding discussion
   * [ ] Tweet about the new release.
 
 * [ ] [Post release tasks][]
@@ -74,9 +67,7 @@ Better to do this in advance:
 [Release Play itself]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-1---release-play-itself
 [Release external modules]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-2---release-external-modules
 [Release omnidoc]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-3---release-omnidoc
-[Update the supported modules page]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-4---update-playframework-templates-and-seeds
-[Update playframework templates and seeds]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-4---update-playframework-templates-and-seeds
-[Update Example Code Service]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-5---update-example-code-service
+[Update play-samples]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-4---update-playframework-templates-and-seeds
 [Update playframework.com]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-6---update-playframeworkcom
 [Update `.version` in `play-generated-docs`]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#update-version-in-play-generated-docs
 [Update `playReleases.json` and `changelog.md`]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#update-playreleasesjson-and-changelogmd
