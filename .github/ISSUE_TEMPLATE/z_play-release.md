@@ -13,7 +13,7 @@ Better to do this in advance:
 
 * [ ] [Triage issues][]
 
-## Do the Release ([Full document](https://github.com/playframework/play-meta/blob/main/releasing/play.md))
+## Do the Release ([Full document](https://github.com/playframework/.github/blob/main/RELEASING.md))
 
 * [ ] [Release projects that Play depends on][]
   * [ ] release [play-json][]
@@ -63,18 +63,18 @@ Better to do this in advance:
 * [ ] [Post release tasks][]
 
 [Triage issues]: https://github.com/issues?utf8=%E2%9C%93&q=label%3Atriage+org%3Aplayframework+archived%3Afalse+
-[Release projects that Play depends on]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
-[Release Play itself]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-1---release-play-itself
-[Release external modules]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-2---release-external-modules
-[Release omnidoc]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-3---release-omnidoc
-[Update play-samples]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-4---update-playframework-templates-and-seeds
-[Update playframework.com]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-6---update-playframeworkcom
-[Update `.version` in `play-generated-docs`]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#update-version-in-play-generated-docs
-[Update `playReleases.json` and `changelog.md`]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#update-playreleasesjson-and-changelogmd
-[Update versions for Example Code Service]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#update-versions-for-example-code-service
-[Deploy the website changes]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#deploy-the-website-changes
-[Announce]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-7---announce
-[Post release tasks]: https://github.com/playframework/play-meta/blob/main/releasing/play.md#step-8---post-release-tasks
+[Release projects that Play depends on]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
+[Release Play itself]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-1---release-play-itself
+[Release external modules]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-2---release-external-modules
+[Release omnidoc]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-3---release-omnidoc
+[Update play-samples]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-4---update-playframework-templates-and-seeds
+[Update playframework.com]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-6---update-playframeworkcom
+[Update `.version` in `play-generated-docs`]: https://github.com/playframework/.github/blob/main/RELEASING.md#update-version-in-play-generated-docs
+[Update `playReleases.json` and `changelog.md`]: https://github.com/playframework/.github/blob/main/RELEASING.md#update-playreleasesjson-and-changelogmd
+[Update versions for Example Code Service]: https://github.com/playframework/.github/blob/main/RELEASING.md#update-versions-for-example-code-service
+[Deploy the website changes]: https://github.com/playframework/.github/blob/main/RELEASING.md#deploy-the-website-changes
+[Announce]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-7---announce
+[Post release tasks]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-8---post-release-tasks
 
 [play-grpc]: https://github.com/playframework/play-grpc
 [play-json]: https://github.com/playframework/play-json
