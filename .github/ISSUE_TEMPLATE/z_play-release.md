@@ -59,6 +59,7 @@ Better to do this in advance:
   * [ ] Post on security mailing list if necessary
   * [ ] Publish a release at <https://github.com/playframework/playframework/releases> with a corresponding discussion
   * [ ] Tweet about the new release.
+  * [ ] Announce in the Play LinkedIn group: https://www.linkedin.com/groups/3818467/
 
 * [ ] [Post release tasks][]
 
