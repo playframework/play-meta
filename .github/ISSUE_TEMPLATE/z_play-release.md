@@ -46,7 +46,7 @@ Better to do this in advance:
   * [ ] release [scalatestplus-play][]
   * [ ] release [play-grpc][]
 
-* [ ] [Release omnidoc][]
+* [ ] [omnidoc][]
 
 * [ ] [Update play-samples][]
 
@@ -58,8 +58,11 @@ Better to do this in advance:
 * [ ] [Announce][]
   * [ ] Post on security mailing list if necessary
   * [ ] Publish a release at <https://github.com/playframework/playframework/releases> with a corresponding discussion
-  * [ ] Tweet about the new release.
+  * [ ] Tweet about the new release: https://twitter.com/playframework/
   * [ ] Announce in the Play LinkedIn group: https://www.linkedin.com/groups/3818467/
+  * [ ] Post an (email) update on the Play Open Collective page: https://opencollective.com/playframework#category-CONNECT
+  * [ ] Post an (email) update in the GitHub Sponsors Dashboard https://github.com/sponsors/playframework/dashboard/updates (private link)
+  * [ ] Post on Scala Reddit https://www.reddit.com/r/scala/
 
 * [ ] [Post release tasks][]
 
@@ -67,7 +70,7 @@ Better to do this in advance:
 [Release projects that Play depends on]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-0---release-projects-that-play-depends-on-play-json-play-ws-twirl
 [Release Play itself]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-1---release-play-itself
 [Release external modules]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-2---release-external-modules
-[Release omnidoc]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-3---release-omnidoc
+[omnidoc]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-3---omnidoc
 [Update play-samples]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-4---update-playframework-templates-and-seeds
 [Update playframework.com]: https://github.com/playframework/.github/blob/main/RELEASING.md#step-6---update-playframeworkcom
 [Update `.version` in `play-generated-docs`]: https://github.com/playframework/.github/blob/main/RELEASING.md#update-version-in-play-generated-docs
