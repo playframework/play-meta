@@ -54,6 +54,7 @@ Better to do this in advance:
   * [ ] [Update `.version` in `play-generated-docs`][]
   * [ ] [Update `playReleases.json` and `changelog.md`][]
   * [ ] [Deploy the website changes][]
+  * [ ] After documentation appeared online, restart the Algolia crawler
 
 * [ ] [Announce][]
   * [ ] Post on security mailing list if necessary
