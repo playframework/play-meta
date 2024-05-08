@@ -61,9 +61,11 @@ Better to do this in advance:
   * [ ] Publish a release at <https://github.com/playframework/playframework/releases> with a corresponding discussion
   * [ ] Tweet about the new release: https://twitter.com/playframework/
   * [ ] Announce in the Play LinkedIn group: https://www.linkedin.com/groups/3818467/
+  * [ ] Announce in the Scala Enthusiasts LinkedIn group: https://www.linkedin.com/groups/746917/
   * [ ] Post an (email) update on the Play Open Collective page: https://opencollective.com/playframework#category-CONNECT
   * [ ] Post an (email) update in the GitHub Sponsors Dashboard https://github.com/sponsors/playframework/dashboard/updates (private link)
   * [ ] Post on Scala Reddit https://www.reddit.com/r/scala/
+  * [ ] For Major releases, post to GitHub release radard: https://github.com/github/release-radar/issues/new?assignees=MishManners&labels=&template=release-radar-request.yml&title=%5BRelease+Radar+Request%5D+%3Ctitle%3E
 
 * [ ] [Post release tasks][]
 
